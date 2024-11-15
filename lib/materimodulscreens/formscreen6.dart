@@ -36,6 +36,8 @@ class _FormScreen6State extends State<FormScreen6> {
               controller: textEditingController,
               decoration: InputDecoration(
                 labelText: 'Masukkan nama',
+                border:
+                OutlineInputBorder(borderSide: BorderSide(width: 1))
               ),
             ),
             SizedBox(height: 20),
