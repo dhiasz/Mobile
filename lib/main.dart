@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_mobile_5/materimodulscreens/formscreen6.dart';
 import 'package:wisata_mobile_5/screens/splashscreen.dart';
 
-void main(){
+void main() {
   runApp(TravelApp());
 }
 
@@ -10,9 +11,9 @@ class TravelApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splashscreen(),
+      home: FormScreen6(),
     );
   }
 }
