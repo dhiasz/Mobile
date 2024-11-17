@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_mobile_5/materimodulscreens/mystatelesswidget.dart';
+import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
 import 'package:wisata_mobile_5/models/landing_model.dart';
-import 'package:wisata_mobile_5/utils/const.dart';
 
 class Landingpage extends StatefulWidget {
   const Landingpage({super.key});
@@ -11,187 +10,131 @@ class Landingpage extends StatefulWidget {
 }
 
 class _LandingpageState extends State<Landingpage> {
-  int CurrentIndex = 0;
+  int currentIndex = 0;
+
+  // Widget untuk menampilkan indikator titik
   Widget dotIndicator(int index) {
     return AnimatedContainer(
-      duration: Duration(microseconds: 400),
-      margin: EdgeInsets.only(right: 6),
-      width: 20,
-      height: 4,
+      duration: const Duration(milliseconds: 400),
+      margin: const EdgeInsets.only(right: 6),
+      width: index == currentIndex ? 20 : 12,
+      height: 8,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: index == CurrentIndex ? Colors.white : Colors.white54
+        color: index == currentIndex ? Colors.white : Colors.white54,
       ),
     );
   }
 
-    @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
+          // PageView.builder untuk gambar slide show
           PageView.builder(
-            itemCount: landingpage.length,
+            itemCount: landingpage.length, // Jumlah item dalam landingpage
             onPageChanged: (value) {
               setState(() {
-                CurrentIndex = value;
+                currentIndex = value;
               });
             },
             itemBuilder: (context, index) {
-              return Image.network(
-                landingpage[index].image,
+              // Menampilkan gambar dari list landingpage
+              return Image.asset(
+                landingpage[index].image,  // Memanggil gambar dari asset
                 fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
               );
             },
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Column(
-              children: [
-                const SizedBox(height: 150),
-                Column(
-                  children: [
-                    Text(
-                      landingpage[CurrentIndex].name,
-                      style: const TextStyle(
-                        fontSize: 45,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: "NunitoSans",
-                        height: 1,
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Mystatefulwidget(),
                       ),
+                    );
+                  },
+                  child: const Text(
+                    "SKIP",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Color.fromARGB(255, 197, 219, 230),
+                      fontWeight: FontWeight.w500,
+                      fontFamily: "NunitoSans",
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      "Ayo jelajahi Indonesia bersama kami dan ciptakan kenangan tak terlupakan yang akan bertahan seumur hidup.",
-                      style: TextStyle(
-                          fontSize: 11,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: "NunitoSans"),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: List.generate(
-                              landingpage.length,
-                              dotIndicator,
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
+                  ),
                 ),
-              ],
+              ),
             ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: SizedBox(
-              height: 185,
+            child: Container(
+              padding: const EdgeInsets.all(25),
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+              ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Mystatefulwidget(),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            landingpage[currentIndex].name,  // Menampilkan nama dari LandingModel
+                            style: const TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Lobster',
+                              height: 1.5,
+                            ),
+                          ),
+                        ),
+                        const Icon(
+                          Icons.arrow_forward,
+                          color: Colors.white,
+                          size: 24,
+                        ),
+                      ],
+                    ),
+                  ),
                   const SizedBox(height: 20),
-                  ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      landingpage.length,
+                      (index) => dotIndicator(index),  // Menampilkan indikator titik
                     ),
-                    child: Container(
-                      padding: const EdgeInsets.all(35),
-                      color: Colors.white,
-                      child: Column(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Mystatelesswidget(),
-                                ),
-                              );
-                            },
-                            child: Container(
-                              height: 60,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                      color: Colors.black12,
-                                      offset: Offset(0, 5),
-                                      spreadRadius: 15,
-                                      blurRadius: 15,
-                                    )
-                                  ],
-                                  color: kButtonColor),
-                              child: const Center(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Mari Kita Mulai",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 15),
-                          const Text.rich(
-                            TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: "sudah punya akun? ",
-                                  style: TextStyle(
-                                    color: kButtonColor,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: "Masuk",
-                                  style: TextStyle(
-                                    color: blueTextColor,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
+                  ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
   }
-
-
-
-
-
 }

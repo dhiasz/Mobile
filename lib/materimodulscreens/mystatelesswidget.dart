@@ -10,22 +10,22 @@ class Mystatelesswidget extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.pink,
-          title: Text('ini app bar'),
+          title: const Text('ini app bar'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/barbie.jpg', width: 250, height: 250,),
-            Text(
+            const Text(
             'tampilan body',
               style: TextStyle(
               fontSize: 38,
               fontWeight: FontWeight.bold,
-              color: const Color.fromARGB(255, 1, 35, 94),
+              color: Color.fromARGB(255, 1, 35, 94),
               letterSpacing: 2.0,
               fontStyle: FontStyle.italic,
               decoration: TextDecoration.underline,
-              decorationColor: const Color.fromARGB(255, 0, 0, 0)
+              decorationColor: Color.fromARGB(255, 0, 0, 0)
             ),),] 
           ),
       ),

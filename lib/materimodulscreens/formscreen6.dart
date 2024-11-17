@@ -21,7 +21,7 @@ class _FormScreen6State extends State<FormScreen6> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text("Tampilan Form"),
+        title: const Text("Tampilan Form"),
         ),
         body: Padding(padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -34,15 +34,15 @@ class _FormScreen6State extends State<FormScreen6> {
                 });
               },
               controller: textEditingController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Masukkan nama',
                 border:
                 OutlineInputBorder(borderSide: BorderSide(width: 1))
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(children: [
-              Text('Jenis kelamin : '),
+              const Text('Jenis kelamin : '),
               Radio(value: 'laki-laki',
               groupValue: selectedRadio,
               onChanged: (value){
@@ -50,7 +50,7 @@ class _FormScreen6State extends State<FormScreen6> {
                   selectedRadio = value.toString();
                 });
               }),
-              Text('laki-laki'),
+              const Text('laki-laki'),
               Radio(value: 'perempuan',
               groupValue: selectedRadio,
               onChanged: (value){
@@ -58,12 +58,12 @@ class _FormScreen6State extends State<FormScreen6> {
                   selectedRadio = value.toString();
                 });
               }),
-              Text('perempuan'),
+              const Text('perempuan'),
             ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             CheckboxListTile(
-              title: Text('olahraga'),
+              title: const Text('olahraga'),
               value: olahraga,
               onChanged: (value) {
                 setState(() {
@@ -72,7 +72,7 @@ class _FormScreen6State extends State<FormScreen6> {
               },
               ),
               CheckboxListTile(
-              title: Text('seni'),
+              title: const Text('seni'),
               value: seni,
               onChanged: (value) {
                 setState(() {
@@ -81,8 +81,8 @@ class _FormScreen6State extends State<FormScreen6> {
                 );
               },
               ),
-              SizedBox(height: 20),
-              SwitchListTile(title: Text('lulus'),
+              const SizedBox(height: 20),
+              SwitchListTile(title: const Text('lulus'),
               value: switchValue,
               onChanged: (value) {
                 setState(() {
@@ -94,7 +94,6 @@ class _FormScreen6State extends State<FormScreen6> {
               width: double.infinity,
               child: ElevatedButton(
               onPressed: (){},
-              child: Text('Submit'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
@@ -102,6 +101,7 @@ class _FormScreen6State extends State<FormScreen6> {
                   borderRadius: BorderRadius.circular(1),
                 )
               ),
+              child: Text('Submit'),
               ),)
             
           ],

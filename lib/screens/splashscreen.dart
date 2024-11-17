@@ -10,6 +10,7 @@ class Splashscreen extends StatefulWidget {
 }
 
 class _SplashscreenState extends State<Splashscreen> {
+  @override
   void initState() {
     super.initState();
 
@@ -23,7 +24,7 @@ class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFFFFFF),
+      backgroundColor: const Color(0xffFFFFFF),
       body: Center(
         child: Stack(
           alignment: Alignment.center,
@@ -33,7 +34,7 @@ class _SplashscreenState extends State<Splashscreen> {
               width: 350,
               height: 350,
             ),
-            Column(
+            const Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox(
