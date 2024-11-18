@@ -63,11 +63,11 @@ class _MainPageState extends State<MainPage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
+            icon: Icon(Icons.access_time_rounded),
             label: 'Time',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.favorite_border),
             label: 'Settings',
           ),
           BottomNavigationBarItem(

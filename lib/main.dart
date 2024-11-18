@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
 import 'package:wisata_mobile_5/screens/landingpage.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class TravelApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Landingpage(),
+      home: Mystatefulwidget(),
     );
   }
 }
