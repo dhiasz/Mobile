@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_mobile_5/models/content_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,11 +9,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // Menyimpan status tap untuk setiap kotak
-  bool _isTapped1 = false; // Status tap untuk 'Most viewed'
-  bool _isTapped2 = false; // Status tap untuk 'Nearby'
+  bool _isTapped1 = false;
+  bool _isTapped2 = false;
 
-  // Fungsi untuk mengubah semua kotak ke warna abu-abu
   void _resetColors() {
     setState(() {
       _isTapped1 = false;
@@ -24,20 +23,23 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(90.0), // Tinggi AppBar
+        preferredSize: const Size.fromHeight(100.0), // Tinggi AppBar
         child: AppBar(
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false, // Menghapus tombol kembali default
           flexibleSpace: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center, // Menjaga keselarasan vertikal
+              crossAxisAlignment:
+                  CrossAxisAlignment.center, // Menjaga keselarasan vertikal
               children: [
                 // Bagian kiri: Teks dengan subjudul
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center, // Menjaga teks sejajar dengan gambar
+                  mainAxisAlignment: MainAxisAlignment
+                      .center, // Menjaga teks sejajar dengan gambar
                   children: [
                     const SizedBox(height: 15.0),
                     const Text(
@@ -71,8 +73,8 @@ class _HomePageState extends State<HomePage> {
       ),
       backgroundColor: Colors.white,
       body: GestureDetector(
-        // GestureDetector untuk menangkap ketukan di luar area kotak
-        onTap: _resetColors, // Reset warna kotak ke abu-abu jika tap terjadi di luar kotak
+        onTap:
+            _resetColors, // Reset warna kotak ke abu-abu jika tap terjadi di luar kotak
         child: ListView(
           children: [
             Padding(
@@ -104,7 +106,8 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   const SizedBox(height: 30.0),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween, // Agar teks berada di kiri dan kanan
+                    mainAxisAlignment: MainAxisAlignment
+                        .spaceBetween, // Agar teks berada di kiri dan kanan
                     children: const [
                       Text(
                         'Popular places',
@@ -125,12 +128,13 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+
             // Kotak hitam dengan aksi ketukan
             SizedBox(height: 30.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Container(
-                height: 40.0,
+                height: 45.0,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
@@ -140,59 +144,152 @@ class _HomePageState extends State<HomePage> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            _isTapped1 = !_isTapped1; // Toggle warna kotak pertama
+                            _isTapped1 =
+                                !_isTapped1; // Toggle warna kotak pertama
                             _isTapped2 = false; // Reset kotak kedua
                           });
                         },
                         child: Container(
-                          height: 40.0,
-                          width: 100.0,
+                          height: 45.0,
+                          width: 120.0,
                           decoration: BoxDecoration(
-                            color: _isTapped1 ? Colors.black : Colors.grey[300],  // Warna berubah saat ditekan
-                            borderRadius: BorderRadius.circular(15.0),  // Sudut melengkung
+                            color: _isTapped1
+                                ? Colors.black
+                                : Colors
+                                    .grey[300], // Warna berubah saat ditekan
+                            borderRadius:
+                                BorderRadius.circular(15.0), // Sudut melengkung
                           ),
-                          alignment: Alignment.center,  // Agar teks berada di tengah
+                          alignment:
+                              Alignment.center, // Agar teks berada di tengah
                           child: const Text(
                             'Most viewed',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 11.0,  // Teks menjadi bold
+                              fontSize: 11.0, // Teks menjadi bold
                             ),
-                            textAlign: TextAlign.center,  // Teks berada di tengah horizontal
+                            textAlign: TextAlign
+                                .center, // Teks berada di tengah horizontal
                           ),
                         ),
                       ),
                     ),
                     // Kotak kedua ('Nearby')
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0,
+                      ),
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            _isTapped2 = !_isTapped2; // Toggle warna kotak kedua
+                            _isTapped2 =
+                                !_isTapped2; // Toggle warna kotak kedua
                             _isTapped1 = false; // Reset kotak pertama
                           });
                         },
                         child: Container(
-                          height: 40.0,
-                          width: 100.0,
+                          height: 45.0,
+                          width: 120.0,
                           decoration: BoxDecoration(
-                            color: _isTapped2 ? Colors.black : Colors.grey[300],  // Warna berubah saat ditekan
-                            borderRadius: BorderRadius.circular(15.0),  // Sudut melengkung
+                            color: _isTapped2
+                                ? Colors.black
+                                : Colors
+                                    .grey[300], // Warna berubah saat ditekan
+                            borderRadius:
+                                BorderRadius.circular(15.0), // Sudut melengkung
                           ),
-                          alignment: Alignment.center,  // Agar teks berada di tengah
+                          alignment:
+                              Alignment.center, // Agar teks berada di tengah
                           child: const Text(
                             'Nearby',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 11.0,  // Teks menjadi bold
+                              fontSize: 11.0, // Teks menjadi bold
                             ),
-                            textAlign: TextAlign.center,  // Teks berada di tengah horizontal
+                            textAlign: TextAlign
+                                .center, // Teks berada di tengah horizontal
                           ),
                         ),
                       ),
                     ),
                   ],
+                ),
+              ),
+            ),
+
+            //content gambar
+            Padding(
+              padding: const EdgeInsets.fromLTRB(15.0, 35.0, 20.0, 20.0),
+              child: Container(
+                height: 445.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: content.length,
+                  itemBuilder: (context, index) {
+                    final item = content[index];
+                    return GestureDetector(
+                      onTap: () {
+                        print(
+                            "${item.name} diklik!"); // Aksi saat gambar diklik
+                      },
+                      child: Container(
+                        width: 250.0, // Lebar tiap gambar
+                        margin: const EdgeInsets.all(
+                            10.0), // Memberi jarak antar gambar
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(1),
+                              offset: Offset(1, 2),
+                              blurRadius: 5,
+                              spreadRadius: 2,
+                            ),
+                          ],
+                          image: DecorationImage(
+                            image: AssetImage(
+                                item.image), // Mengambil gambar dari list
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: Stack(
+                          children: [
+                            // Background overlay untuk teks agar terlihat jelas
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                gradient: LinearGradient(
+                                  begin: Alignment.bottomCenter,
+                                  end: Alignment.topCenter,
+                                  colors: [
+                                    Colors.black.withOpacity(0.7),
+                                    Colors.transparent,
+                                  ],
+                                ),
+                              ),
+                            ),
+                            // Teks di atas gambar
+                            Positioned(
+                              bottom: 10,
+                              left: 10,
+                              right: 10,
+                              child: Text(
+                                item.name,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
