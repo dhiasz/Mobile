@@ -223,10 +223,11 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.fromLTRB(15.0, 35.0, 20.0, 20.0),
               child: Container(
-                height: 445.0,
+                height: 460.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
+                
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: content.length,
@@ -238,19 +239,21 @@ class _HomePageState extends State<HomePage> {
                             "${item.name} diklik!"); // Aksi saat gambar diklik
                       },
                       child: Container(
+                        height: 445.0,
                         width: 250.0, // Lebar tiap gambar
-                        margin: const EdgeInsets.all(
-                            10.0), // Memberi jarak antar gambar
+                        margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0), // Memberi jarak antar gambar
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
+                          borderRadius: BorderRadius.circular(25.0),
+                          
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(1),
-                              offset: Offset(1, 3),
-                              blurRadius: 3,
-                              spreadRadius: 4,
+                              color: const Color.fromARGB(255, 211, 209, 209).withOpacity(1),
+                              offset: Offset(0, 6),
+                              blurRadius: 10,
+                              spreadRadius: 5,
                             ),
-                          ],
+                          ], 
+
                           image: DecorationImage(
                             image: AssetImage(
                                 item.image), // Mengambil gambar dari list
