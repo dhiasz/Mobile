@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/models/content_model.dart';
 
@@ -240,13 +242,13 @@ class _HomePageState extends State<HomePage> {
                         margin: const EdgeInsets.all(
                             10.0), // Memberi jarak antar gambar
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
+                          borderRadius: BorderRadius.circular(20.0),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(1),
-                              offset: Offset(1, 2),
-                              blurRadius: 5,
-                              spreadRadius: 2,
+                              offset: Offset(1, 3),
+                              blurRadius: 3,
+                              spreadRadius: 4,
                             ),
                           ],
                           image: DecorationImage(
@@ -254,34 +256,40 @@ class _HomePageState extends State<HomePage> {
                                 item.image), // Mengambil gambar dari list
                             fit: BoxFit.cover,
                           ),
+
                         ),
+
                         child: Stack(
                           children: [
-                            // Background overlay untuk teks agar terlihat jelas
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                gradient: LinearGradient(
-                                  begin: Alignment.bottomCenter,
-                                  end: Alignment.topCenter,
-                                  colors: [
-                                    Colors.black.withOpacity(0.7),
-                                    Colors.transparent,
-                                  ],
-                                ),
-                              ),
-                            ),
                             // Teks di atas gambar
                             Positioned(
                               bottom: 10,
                               left: 10,
                               right: 10,
-                              child: Text(
-                                item.name,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.bold,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(15.0),
+                                child: BackdropFilter(
+                                  filter: ImageFilter.blur(
+                                      sigmaX: 5.0, sigmaY: 5.0),
+                                  child: Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 5.0),
+                                    height: 75,
+                                    width: 224,
+                                    decoration: BoxDecoration(
+                                      color: Colors.transparent,
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
+                                    child: Text(
+                                      item.name,
+                                      style: const TextStyle(
+                                        height: 2,
+                                        color: Colors.white,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),

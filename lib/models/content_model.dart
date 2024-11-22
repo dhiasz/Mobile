@@ -7,11 +7,11 @@ class Content {
 List<Content> content = [
   Content(
       image: 'assets/images/Thenicepark.jpg',
-      name: 'Jelajahi Indonesia Bersama Kami'),
+      name: 'The Nice Fantasy Park'),
   Content(
       image: 'assets/images/KebunRayaCibodas(2).jpg',
-      name: 'Keindahan Alam Indonesia'),
+      name: 'Kebun Raya Cibodas'),
   Content(
       image: 'assets/images/Cibeureum.jpg', 
-      name: 'Kesejukan Angin Pegunungan'),
+      name: 'Curug Cibereum'),
 ];
