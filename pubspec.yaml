@@ -68,6 +68,7 @@ flutter:
     - assets/images/Telagabiru.jpg
     - assets/images/Thenicepark.jpg
     - assets/font/Lobster-Regular.ttf
+    - assets/animation/splashscreen.json
  
 
   # An image asset can refer to one or more resolution-specific "variants", see

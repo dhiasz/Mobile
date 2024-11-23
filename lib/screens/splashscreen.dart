@@ -14,10 +14,12 @@ class _SplashscreenState extends State<Splashscreen> {
   void initState() {
     super.initState();
 
-    //menunda sebanyak 3 detik
+    // Menunda sebanyak 3 detik
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const Landingpage()));
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const Landingpage()),
+      );
     });
   }
 
@@ -30,34 +32,33 @@ class _SplashscreenState extends State<Splashscreen> {
           alignment: Alignment.center,
           children: [
             Lottie.network(
-              'https://lottie.host/956e1e4f-8c98-4206-ae82-50dd50161d69/dtw01aXDDE.json',
+              'https://lottie.host/ec78e935-6666-4e20-afde-1b550470cf96/PEiYTAn89z.json',
               width: 350,
               height: 350,
+              fit: BoxFit.contain,
             ),
             const Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(
-                  height: 300,
+                SizedBox(height: 300),
+                Text(
+                  'ASLABTIF',
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff1B1B1B),
+                  ),
                 ),
-
-
-
-                Text('ASLABTIF',
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xff1B1B1B)),
-                ),
-
-                Text('TRAVEL',
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xff1B1B1B)),
+                Text(
+                  'TRAVEL',
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff1B1B1B),
+                  ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
