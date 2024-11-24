@@ -3,14 +3,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
 
-class Thenice extends StatefulWidget {
-  const Thenice({super.key});
+class Cibodas extends StatefulWidget {
+  const Cibodas({super.key});
 
   @override
-  State<Thenice> createState() => _TheniceState();
+  State<Cibodas> createState() => _CibodasState();
 }
 
-class _TheniceState extends State<Thenice> {
+class _CibodasState extends State<Cibodas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +40,7 @@ class _TheniceState extends State<Thenice> {
                   ],
                   image: const DecorationImage(
                     image: AssetImage(
-                        'assets/images/Thenicepark.jpg'), // Path benar
+                        'assets/images/KebunRayaCibodas(2).jpg'), // Path benar
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -63,7 +63,7 @@ class _TheniceState extends State<Thenice> {
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Text(
-                              'The Nice Park',
+                              'Kebun Raya Cibodas',
                               style: const TextStyle(
                                 height: 2,
                                 color: Colors.white,

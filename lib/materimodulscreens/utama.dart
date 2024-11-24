@@ -1,6 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:wisata_mobile_5/materimodulscreens/page/cibodas.dart';
+import 'package:wisata_mobile_5/materimodulscreens/page/curugciberem.dart';
+import 'package:wisata_mobile_5/materimodulscreens/page/popular.dart';
+import 'package:wisata_mobile_5/materimodulscreens/page/thenice.dart';
 import 'package:wisata_mobile_5/models/content_model.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +15,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<Widget> pages = [
+    Thenice(),
+    Cibodas(),
+    CIbereum(),
+    // Tambahkan halaman lainnya
+  ];
+
   bool _isTapped1 = false;
   bool _isTapped2 = false;
 
@@ -106,28 +117,36 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 children: [
-                  const SizedBox(height: 30.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment
-                        .spaceBetween, // Agar teks berada di kiri dan kanan
-                    children: const [
-                      Text(
-                        'Popular places',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        'View all',
-                        style: TextStyle(
-                          fontSize: 12.0,
-                          color: Color.fromARGB(135, 90, 90, 90),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+      const SizedBox(height: 30.0),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text(
+            'Popular places',
+            style: TextStyle(
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              // Aksi ketika "View all" diklik
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Viewall()),
+              );
+            },
+            child: const Text(
+              'View all',
+              style: TextStyle(
+                fontSize: 12.0,
+                color: Color.fromARGB(135, 90, 90, 90),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ],
               ),
             ),
 
@@ -227,7 +246,6 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: content.length,
@@ -235,31 +253,41 @@ class _HomePageState extends State<HomePage> {
                     final item = content[index];
                     return GestureDetector(
                       onTap: () {
-                        print(
-                            "${item.name} diklik!"); // Aksi saat gambar diklik
+                        if (index < pages.length) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => pages[index]),
+                          );
+                        } else {
+                          // Handle jika index melebihi jumlah halaman
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('Halaman belum tersedia')),
+                          );
+                        }
                       },
                       child: Container(
                         height: 445.0,
                         width: 250.0, // Lebar tiap gambar
-                        margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0), // Memberi jarak antar gambar
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 20.0,
+                            vertical: 15.0), // Memberi jarak antar gambar
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25.0),
-                          
                           boxShadow: [
                             BoxShadow(
-                              color: const Color.fromARGB(255, 211, 209, 209).withOpacity(1),
+                              color: const Color.fromARGB(255, 211, 209, 209)
+                                  .withOpacity(1),
                               offset: Offset(0, 6),
                               blurRadius: 10,
                               spreadRadius: 5,
                             ),
-                          ], 
-
+                          ],
                           image: DecorationImage(
                             image: AssetImage(
                                 item.image), // Mengambil gambar dari list
                             fit: BoxFit.cover,
                           ),
-
                         ),
 
                         child: Stack(
