@@ -9,9 +9,9 @@ List<LandingModel> landingpage = [
       image: 'assets/images/Thenicepark.jpg',
       name: 'Jelajahi Indonesia Bersama Kami'),
   LandingModel(
-      image: 'assets/images/KebunRayaCibodas(2).jpg',
+      image: 'assets/images/Little_Venice(1).png',
       name: 'Keindahan Alam Indonesia'),
   LandingModel(
-      image: 'assets/images/Cibeureum.jpg', 
+      image: 'assets/images/KebunRayaCibodas(1).jpg',
       name: 'Kesejukan Angin Pegunungan'),
 ];
