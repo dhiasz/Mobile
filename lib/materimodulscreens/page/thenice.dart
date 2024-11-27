@@ -227,7 +227,7 @@ class _TheniceState extends State<Thenice> {
 
                   SizedBox(height: 30.0),
                   Text(
-                    'Fasilitas',
+                    'WAHANA',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
