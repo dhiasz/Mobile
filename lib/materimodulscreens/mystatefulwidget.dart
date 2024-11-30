@@ -30,14 +30,35 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0; // Indeks tab yang aktif
+  
+   int _selectedIndex = 0;
+  TextEditingController getUser = TextEditingController();  // Controller for username
+  late String username;  // Declare a variable to store the username
 
-  // Daftar halaman untuk setiap tab
-  final List<Widget> _pages = const [
-    HomePage(), // Halaman Home
+  // Initialize the list of pages
+  List<Widget> _pages = [];
+
+  @override
+  void initState() {
+    super.initState();
+    // Assume that username is retrieved from the login form
+    username = getUser.text;  // Get the username from the login form
+
+    // Now initialize the pages list with the username
+    _pages = [
+      HomePage(username: username),  // Pass the username to HomePage
     Searchpage(), // Halaman Cari
     Settingpage(), // Halaman Pengaturan
-    Userpage(), // Halaman Pengguna
-  ];
+    Userpage(), // Halaman Pengguna  // Pass the username to UserPage
+    ];
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {

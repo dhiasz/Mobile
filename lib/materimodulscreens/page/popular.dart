@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_mobile_5/models/content.dart';
 import 'package:wisata_mobile_5/models/destination_model.dart';
 import 'package:wisata_mobile_5/utils/const.dart';
 import 'package:wisata_mobile_5/widget/rekomendasi_destination.dart';
@@ -11,6 +12,16 @@ class Viewall extends StatefulWidget {
 }
 
 class _ViewallState extends State<Viewall> {
+
+   List<TravelDestination> popular = listDestination
+      .where((element) => element.category == 'popular')
+      .toList();
+
+  List<TravelDestination> rekomendasi = listDestination
+      .where((element) => element.category == 'rekomendasi')
+      .toList();
+
+
   bool _isTapped1 = false;
   bool _isTapped2 = false;
 
@@ -21,9 +32,6 @@ class _ViewallState extends State<Viewall> {
     });
   }
 
-  List<TravelDestination> rekomendasi = listDestination
-      .where((element) => element.category == 'rekomendasi')
-      .toList();
 
   @override
   Widget build(BuildContext context) {
@@ -129,9 +137,15 @@ class _ViewallState extends State<Viewall> {
                     (index) => Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: GestureDetector(
-                        onTap: () {
-                          // Tambahkan aksi saat destinasi ditekan
-                        },
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) =>
+                                    Detail(destination: popular[index]),
+                              ),
+                            );
+                          },
                         child: RekomendasiDestination(
                           destination: rekomendasi[index],
                         ),

@@ -5,22 +5,29 @@ import 'package:wisata_mobile_5/materimodulscreens/page/cibodas.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/curugciberem.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/popular.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/thenice.dart';
-import 'package:wisata_mobile_5/models/content_model.dart';
+import 'package:wisata_mobile_5/models/content.dart';
+import 'package:wisata_mobile_5/models/destination_model.dart';
+import 'package:wisata_mobile_5/screens/Loginpage.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final String username;
+
+  const HomePage({Key? key, required this.username}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Widget> pages = [
-    Thenice(),
-    Cibodas(),
-    CIbereum(),
-    // Tambahkan halaman lainnya
-  ];
+  int selectedPage = 0;
+
+  List<TravelDestination> popular = listDestination
+      .where((element) => element.category == 'popular')
+      .toList();
+
+  List<TravelDestination> rekomendasi = listDestination
+      .where((element) => element.category == 'rekomendasi')
+      .toList();
 
   bool _isTapped1 = false;
   bool _isTapped2 = false;
@@ -55,9 +62,10 @@ class _HomePageState extends State<HomePage> {
                       .center, // Menjaga teks sejajar dengan gambar
                   children: [
                     const SizedBox(height: 15.0),
-                    const Text(
-                      'Hi, Kevin 👋',
-                      style: TextStyle(
+                    // Replace 'Kevin' with the dynamic username
+                    Text(
+                      'Hi, ${widget.username} 👋', // Dynamically display username here
+                      style: const TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -117,36 +125,36 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 children: [
-      const SizedBox(height: 30.0),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            'Popular places',
-            style: TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              // Aksi ketika "View all" diklik
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Viewall()),
-              );
-            },
-            child: const Text(
-              'View all',
-              style: TextStyle(
-                fontSize: 12.0,
-                color: Color.fromARGB(135, 90, 90, 90),
-              ),
-            ),
-          ),
-        ],
-      ),
-    ],
+                  const SizedBox(height: 30.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Popular places',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // Aksi ketika "View all" diklik
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Viewall()),
+                          );
+                        },
+                        child: const Text(
+                          'View all',
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            color: Color.fromARGB(135, 90, 90, 90),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
 
@@ -246,89 +254,95 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                child: ListView.builder(
+                child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  itemCount: content.length,
-                  itemBuilder: (context, index) {
-                    final item = content[index];
-                    return GestureDetector(
-                      onTap: () {
-                        if (index < pages.length) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => pages[index]),
-                          );
-                        } else {
-                          // Handle jika index melebihi jumlah halaman
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('Halaman belum tersedia')),
-                          );
-                        }
-                      },
-                      child: Container(
-                        height: 445.0,
-                        width: 250.0, // Lebar tiap gambar
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20.0,
-                            vertical: 15.0), // Memberi jarak antar gambar
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color.fromARGB(255, 211, 209, 209)
-                                  .withOpacity(1),
-                              offset: Offset(0, 6),
-                              blurRadius: 10,
-                              spreadRadius: 5,
+                  padding: const EdgeInsets.only(bottom: 20, left: 20),
+                  child: Row(
+                    children: List.generate(
+                      popular.length,
+                      (index) => Padding(
+                        padding: const EdgeInsets.only(right: 15),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) =>
+                                    Detail(destination: popular[index]),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            height: 445.0,
+                            width: 250.0, // Lebar tiap gambar
+                            margin: const EdgeInsets.symmetric(
+                              horizontal: 10.0,
+                              vertical: 15.0,
+                            ), // Memberi jarak antar gambar
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  color:
+                                      const Color.fromARGB(255, 211, 209, 209)
+                                          .withOpacity(1),
+                                  offset: const Offset(0, 6),
+                                  blurRadius: 10,
+                                  spreadRadius: 5,
+                                ),
+                              ],
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  popular[index].image![
+                                      0], // Mengambil gambar pertama dari daftar
+                                ),
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ],
-                          image: DecorationImage(
-                            image: AssetImage(
-                                item.image), // Mengambil gambar dari list
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-
-                        child: Stack(
-                          children: [
-                            // Teks di atas gambar
-                            Positioned(
-                              bottom: 10,
-                              left: 10,
-                              right: 10,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(15.0),
-                                child: BackdropFilter(
-                                  filter: ImageFilter.blur(
-                                      sigmaX: 5.0, sigmaY: 5.0),
-                                  child: Container(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 5.0),
-                                    height: 75,
-                                    width: 224,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      borderRadius: BorderRadius.circular(15.0),
-                                    ),
-                                    child: Text(
-                                      item.name,
-                                      style: const TextStyle(
-                                        height: 2,
-                                        color: Colors.white,
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.bold,
+                            child: Stack(
+                              children: [
+                                // Teks di atas gambar
+                                Positioned(
+                                  bottom: 10,
+                                  left: 10,
+                                  right: 10,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(15.0),
+                                    child: BackdropFilter(
+                                      filter: ImageFilter.blur(
+                                          sigmaX: 5.0, sigmaY: 5.0),
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 10.0),
+                                        height: 75,
+                                        decoration: BoxDecoration(
+                                          color: Colors.black.withOpacity(0.3),
+                                          borderRadius:
+                                              BorderRadius.circular(15.0),
+                                        ),
+                                        child: Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Text(
+                                            popular[index]
+                                                .name, // Nama destinasi
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
-                    );
-                  },
+                    ),
+                  ),
                 ),
               ),
             ),

@@ -1,13 +1,11 @@
 import 'dart:math';
 
 Random random = Random();
-const description =
-    'Tempat-tempat wisata menawarkan beragam pengalaman, masing-masing dengan pesona dan daya tarik yang unik. Dari lanskap alam yang memukau hingga landmark bersejarah, selalu ada sesuatu untuk setiap wisatawan. Wisata PesisirDestinasi seperti pantai tropis mengundang relaksasi dengan air yang jernih, sementara daerah pegunungan menawarkan jalur pendakian yang penuh petualangan dan pemandangan yang menakjubkan.';
 
 class TravelDestination {
   final int id, price, review;
   final List<String>? image;
-  final String name, description, category, location;
+  final String name, description, category, location, fasility, wahana, jam_dan_tiket;
   final double rate;
 
   TravelDestination({
@@ -20,56 +18,96 @@ class TravelDestination {
     required this.price,
     required this.description,
     required this.rate,
+    required this.fasility,
+    required this.wahana,
+    required this.jam_dan_tiket,
   });
 }
 
 List<TravelDestination> listDestination = [
   // Popular destinations
   TravelDestination(
-      id: 1,
-      name: "The Nice Park Funtasy",
-      category: 'popular',
-      image: [
-        'assets/images/Thenicepark.jpg',
-        'assets/images/Thenicepark.jpg',
-        'assets/images/Thenicepark.jpg',
-        'assets/images/Thenicepark.jpg',
-        ],
-      location: 'Mariwati, Sukaresmi, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 30000,
-      description: description,
-      rate: 4.8),
+    id: 1,
+    name: "The Nice Park Funtasy",
+    category: 'popular',
+    image: [
+      'assets/images/Thenicepark.jpg',
+      'assets/images/Thenicepark(2).jpg',
+      'assets/images/Thenicepark(3).jpg',
+    ],
+    location: 'Cianjur, Mariwati-Sukaresmi',
+    review: random.nextInt(250) + 20,
+    price: 30000,
+    description:
+        'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+    rate: 4.8,
+    fasility: "1. Tempat parkir luas\n"
+        "2. Toilet\n"
+        "3. Masjid\n"
+        "4. Aula\n"
+        "5. Tempat istirahat\n"
+        "6. Tempat sampah\n"
+        "7. Pusat informasi\n"
+        "8. Restoran, food court, dan snack corner\n"
+        "9. P3K\n"
+        "10. Keamanan\n"
+        "11. Spot foto yang unik dan instagramable\n"
+        "12. E-bike\n"
+        "13. Merchandise Store",
+    wahana: "1. Mini Zoo\n"
+        "2. Sky Bridge (jembatan gantung)\n"
+        "3. Flying Fox\n"
+        "4. ATV\n"
+        "5. Sepeda air dan perahu bebek\n"
+        "6. Kolam renang dan kolam pancing\n"
+        "7. Playground\n"
+        "8. Rainbow Slide\n"
+        "9. Hanging Steps\n"
+        "10. Giant Swing\n"
+        "11. Kebun sayur organik\n"
+        "12. Aneka rumah flora dan fauna (rumah jamur, rumah kupu-kupu, rumah lebah, rumah burung, dan rumah tanaman)",
+    jam_dan_tiket: "Jam Operasioanl : Senin - Jumat, 09:00 - 17:00\n"
+"                       : Sabtu - Minggu, 08.00-17.45\n"
+"Harga               : Weekday Rp30.000 & Weekend Rp35.000"),
+
   TravelDestination(
       id: 2,
       name: "Kebun Raya Cibodas",
       category: 'popular',
       image: [
-       'assets/images/KebunRayaCibodas(2).jpg',
-       'assets/images/KebunRayaCibodas(2).jpg',
-       'assets/images/KebunRayaCibodas(2).jpg',
-       'assets/images/KebunRayaCibodas(2).jpg',
+        'assets/images/KebunRayaCibodas(2).jpg',
+        'assets/images/KebunRayaCibodas(1).jpg',
+        'assets/images/KebunRayaCibodas(2).jpg',
+        'assets/images/KebunRayaCibodas(1).jpg',
       ],
       location: 'Cipanas, Cibodas, Indonesia',
       review: random.nextInt(250) + 20,
       price: 15000,
-      description: description,
-      rate: 4.9),
+      description:
+          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+      rate: 4.9,
+      fasility: "BERIKAN FASILITAS",
+      wahana: "BERIKAN wahana",
+      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
       id: 3,
-      name: "Raja Ampat",
+      name: "Taman Bunga",
       category: 'popular',
       image: [
-        "https://images.unsplash.com/photo-1724258391590-6cfdc2d783b4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1724258474555-1c850b2ccda6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1724257729114-57ac6110ba36?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1703769605328-01120ea51ee0?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        'assets/images/Tamanbunga(2).jpg',
+        'assets/images/Tamanbunga.jpg',
+        'assets/images/Tamanbunga(3).jpg',
+        'assets/images/Tamanbunga(4).jpg',
       ],
-      location: 'Papua Barat, Indonesia',
+      location: 'Cianjur, Mariwati-Sukaresmi',
       review: random.nextInt(250) + 20,
-      price: 250,
-      description: description,
-      rate: 4.8),
+      price: 50000,
+      description:
+          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+      rate: 4.8,
+      fasility: "BERIKAN FASILITAS",
+      wahana: "BERIKAN wahana",
+      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
       id: 4,
       name: "Tanah Lot",
@@ -83,25 +121,33 @@ List<TravelDestination> listDestination = [
       location: 'Bali, Indonesia',
       review: random.nextInt(250) + 20,
       price: 100,
-      description: description,
-      rate: 4.7),
+      description:
+          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+      rate: 4.7,
+      fasility: "BERIKAN FASILITAS",
+      wahana: "BERIKAN wahana",
+      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
 
   // Recommended destinations
   TravelDestination(
       id: 5,
       name: "Kebun Raya Cibodas",
       category: 'rekomendasi',
-       image: [
-       'assets/images/KebunRayaCibodas(2).jpg',
-       'assets/images/KebunRayaCibodas(1).jpg',
-       'assets/images/KebunRayaCibodas(2).jpg',
-       'assets/images/KebunRayaCibodas(1).jpg',
+      image: [
+        'assets/images/KebunRayaCibodas(2).jpg',
+        'assets/images/KebunRayaCibodas(1).jpg',
+        'assets/images/KebunRayaCibodas(2).jpg',
+        'assets/images/KebunRayaCibodas(1).jpg',
       ],
       location: 'Jawa Timur, Indonesia',
       review: random.nextInt(250) + 20,
       price: 180,
-      description: description,
-      rate: 4.9),
+      description:
+          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+      rate: 4.9,
+      fasility: "BERIKAN FASILITAS",
+      wahana: "BERIKAN wahana",
+      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
       id: 6,
       name: "Danau Toba",
@@ -115,8 +161,12 @@ List<TravelDestination> listDestination = [
       location: 'Sumatera Utara, Indonesia',
       review: random.nextInt(250) + 20,
       price: 120,
-      description: description,
-      rate: 4.5),
+      description:
+          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+      rate: 4.5,
+      fasility: "BERIKAN FASILITAS",
+      wahana: "BERIKAN wahana",
+      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
       id: 7,
       name: "Pink Beach",
@@ -130,8 +180,12 @@ List<TravelDestination> listDestination = [
       location: 'NTT, Indonesia',
       review: random.nextInt(250) + 20,
       price: 350,
-      description: description,
-      rate: 4.7),
+      description:
+          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+      rate: 4.7,
+      fasility: "BERIKAN FASILITAS",
+      wahana: "BERIKAN wahana",
+      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
       id: 8,
       name: "Nusa Penida",
@@ -145,8 +199,12 @@ List<TravelDestination> listDestination = [
       location: 'Bali, Indonesia',
       review: random.nextInt(250) + 20,
       price: 200,
-      description: description,
-      rate: 4.7),
+      description:
+          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+      rate: 4.7,
+      fasility: "BERIKAN FASILITAS",
+      wahana: "BERIKAN wahana",
+      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
       id: 9,
       name: "Candi Borobudur",
@@ -160,6 +218,10 @@ List<TravelDestination> listDestination = [
       location: 'Jawa Tengah, Indonesia',
       review: random.nextInt(250) + 20,
       price: 150,
-      description: description,
-      rate: 4.8),
+      description:
+          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+      rate: 4.8,
+      fasility: "BERIKAN FASILITAS",
+      wahana: "BERIKAN wahana",
+      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
 ];
