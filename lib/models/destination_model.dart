@@ -189,23 +189,28 @@ List<TravelDestination> listDestination = [
   // Recommended destinations
   TravelDestination(
       id: 5,
-      name: "Kebun Raya Cibodas",
+      name: "Curug Cibeureum",
       category: 'rekomendasi',
       image: [
-        'assets/images/KebunRayaCibodas(2).jpg',
-        'assets/images/KebunRayaCibodas(1).jpg',
-        'assets/images/KebunRayaCibodas(2).jpg',
-        'assets/images/KebunRayaCibodas(1).jpg',
+        'assets/images/Cibeureum (2).jpg',
+        'assets/images/Cibeureum.jpg',
       ],
       location: 'Jawa Timur, Indonesia',
       review: random.nextInt(250) + 20,
       price: 180,
       description:
-          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+          'Selain keindahan Curug atau Air Terjun Cibeureum, selama perjalanan menuju ke lokasi akan terhidang pemandangan alam yang indah dan eksotis. Tidak heran jika pengunjung menemukan berbagai jenis burung dan kera yang bergelantungan. Ada juga telaga biru dan rawa panyangcangan yang bisa dinikmati keindahannya selama perjalanan. Serta jembatan panjang yang terbuat dari batu buatan yang sering menjadi salah satu tempat favorit berfoto ria atau selfie selama perjalanan ke Curug Cibeureum ini.',
       rate: 4.9,
-      fasility: "BERIKAN FASILITAS",
-      wahana: "BERIKAN wahana",
-      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+      fasility:  '1. Tempat parkir luas\n'
+                    '2. Toilet\n'
+                    '3. Pasar\n'
+                    '4. Musolla\n'
+                    '5. Pos\n'
+                    '6. Tempat sampah\n'
+                    '7. Spot foto yang unik dan instagramable\n',
+      wahana: '1. Telaga Biru\n',
+      jam_dan_tiket: 'Jam Operasioanl : Setiap hari07.00-14.00 \n'
+                    'Harga               :  Weekday: Rp16.000 Weekend Rp18.500',),
   TravelDestination(
       id: 6,
       name: "Danau Toba",
