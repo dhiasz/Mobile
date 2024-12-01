@@ -63,6 +63,7 @@ flutter:
   assets:
     - assets/images/barbie.jpg
     - assets/images/Cibeureum.jpg
+    - assets/images/Cibeureum (2).jpg
     - assets/images/KebunRayaCibodas(1).jpg
     - assets/images/KebunRayaCibodas(2).jpg
     - assets/images/sunrise(1).jpg
@@ -72,6 +73,9 @@ flutter:
     - assets/images/Thenicepark(2).jpg
     - assets/images/Thenicepark(3).jpg
     - assets/images/Little_Venice(1).png
+    - assets/images/Little_Venice(2).jpg
+    - assets/images/Little_Venice(3).jpg
+    - assets/images/Little_Venice(4).jpg
     - assets/images/Tamanbunga.jpg
     - assets/images/Tamanbunga(2).jpg
     - assets/images/Tamanbunga(3).jpg

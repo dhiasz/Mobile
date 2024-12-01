@@ -5,7 +5,13 @@ Random random = Random();
 class TravelDestination {
   final int id, price, review;
   final List<String>? image;
-  final String name, description, category, location, fasility, wahana, jam_dan_tiket;
+  final String name,
+      description,
+      category,
+      location,
+      fasility,
+      wahana,
+      jam_dan_tiket;
   final double rate;
 
   TravelDestination({
@@ -27,48 +33,48 @@ class TravelDestination {
 List<TravelDestination> listDestination = [
   // Popular destinations
   TravelDestination(
-    id: 1,
-    name: "The Nice Park Funtasy",
-    category: 'popular',
-    image: [
-      'assets/images/Thenicepark.jpg',
-      'assets/images/Thenicepark(2).jpg',
-      'assets/images/Thenicepark(3).jpg',
-    ],
-    location: 'Cianjur, Mariwati-Sukaresmi',
-    review: random.nextInt(250) + 20,
-    price: 30000,
-    description:
-        'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
-    rate: 4.8,
-    fasility: "1. Tempat parkir luas\n"
-        "2. Toilet\n"
-        "3. Masjid\n"
-        "4. Aula\n"
-        "5. Tempat istirahat\n"
-        "6. Tempat sampah\n"
-        "7. Pusat informasi\n"
-        "8. Restoran, food court, dan snack corner\n"
-        "9. P3K\n"
-        "10. Keamanan\n"
-        "11. Spot foto yang unik dan instagramable\n"
-        "12. E-bike\n"
-        "13. Merchandise Store",
-    wahana: "1. Mini Zoo\n"
-        "2. Sky Bridge (jembatan gantung)\n"
-        "3. Flying Fox\n"
-        "4. ATV\n"
-        "5. Sepeda air dan perahu bebek\n"
-        "6. Kolam renang dan kolam pancing\n"
-        "7. Playground\n"
-        "8. Rainbow Slide\n"
-        "9. Hanging Steps\n"
-        "10. Giant Swing\n"
-        "11. Kebun sayur organik\n"
-        "12. Aneka rumah flora dan fauna (rumah jamur, rumah kupu-kupu, rumah lebah, rumah burung, dan rumah tanaman)",
-    jam_dan_tiket: "Jam Operasioanl : Senin - Jumat, 09:00 - 17:00\n"
-"                       : Sabtu - Minggu, 08.00-17.45\n"
-"Harga               : Weekday Rp30.000 & Weekend Rp35.000"),
+      id: 1,
+      name: "The Nice Park Funtasy",
+      category: 'popular',
+      image: [
+        'assets/images/Thenicepark.jpg',
+        'assets/images/Thenicepark(2).jpg',
+        'assets/images/Thenicepark(3).jpg',
+      ],
+      location: 'Cianjur, Mariwati-Sukaresmi',
+      review: random.nextInt(250) + 20,
+      price: 30000,
+      description:
+          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+      rate: 4.8,
+      fasility: "1. Tempat parkir luas\n"
+          "2. Toilet\n"
+          "3. Masjid\n"
+          "4. Aula\n"
+          "5. Tempat istirahat\n"
+          "6. Tempat sampah\n"
+          "7. Pusat informasi\n"
+          "8. Restoran, food court, dan snack corner\n"
+          "9. P3K\n"
+          "10. Keamanan\n"
+          "11. Spot foto yang unik dan instagramable\n"
+          "12. E-bike\n"
+          "13. Merchandise Store",
+      wahana: "1. Mini Zoo\n"
+          "2. Sky Bridge (jembatan gantung)\n"
+          "3. Flying Fox\n"
+          "4. ATV\n"
+          "5. Sepeda air dan perahu bebek\n"
+          "6. Kolam renang dan kolam pancing\n"
+          "7. Playground\n"
+          "8. Rainbow Slide\n"
+          "9. Hanging Steps\n"
+          "10. Giant Swing\n"
+          "11. Kebun sayur organik\n"
+          "12. Aneka rumah flora dan fauna (rumah jamur, rumah kupu-kupu, rumah lebah, rumah burung, dan rumah tanaman)",
+      jam_dan_tiket: "Jam Operasioanl : Senin - Jumat, 09:00 - 17:00\n"
+          "                       : Sabtu - Minggu, 08.00-17.45\n"
+          "Harga               : Weekday Rp30.000 & Weekend Rp35.000"),
 
   TravelDestination(
       id: 2,
@@ -82,51 +88,103 @@ List<TravelDestination> listDestination = [
       ],
       location: 'Cipanas, Cibodas, Indonesia',
       review: random.nextInt(250) + 20,
-      price: 15000,
+      price: 25000,
       description:
           'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
       rate: 4.9,
       fasility: "BERIKAN FASILITAS",
       wahana: "BERIKAN wahana",
-      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
-      id: 3,
-      name: "Taman Bunga",
-      category: 'popular',
-      image: [
-        'assets/images/Tamanbunga(2).jpg',
-        'assets/images/Tamanbunga.jpg',
-        'assets/images/Tamanbunga(3).jpg',
-        'assets/images/Tamanbunga(4).jpg',
-      ],
-      location: 'Cianjur, Mariwati-Sukaresmi',
-      review: random.nextInt(250) + 20,
-      price: 50000,
-      description:
-          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
-      rate: 4.8,
-      fasility: "BERIKAN FASILITAS",
-      wahana: "BERIKAN wahana",
-      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+    id: 3,
+    name: "Taman Bunga",
+    category: 'popular',
+    image: [
+      'assets/images/Tamanbunga(2).jpg',
+      'assets/images/Tamanbunga(3).jpg',
+      'assets/images/Tamanbunga.jpg',
+      'assets/images/Tamanbunga(4).jpg',
+    ],
+    location: 'Cianjur, Mariwati-Sukaresmi',
+    review: random.nextInt(250) + 20,
+    price: 50000,
+    description:
+        'Seperti namanya, Little Venice adalah tempat wisata yang meniru gaya kota Venezia di Italia. Kota ini terkenal banget sebagai salah satu destinasi liburan impian karena keindahannya dan juga keunikannya, karena sebagian kota seperti dibangun di atas laut sehingga menghasilkan banyak kanal-kanal air yang bisa ditelusuri dengan perahu kecil bernama gondola. Selain jalan-jalan dengan gondola ada banyak spot foto yang instagramable.',
+    rate: 4.8,
+    fasility: '1. Tempat parkir luas\n'
+        '2. Toilet\n'
+        '3. Masjid\n'
+        '4. Tempat Bermain Anak\n'
+        '5. Kolam Pancing\n'
+        '6. Tempat sampah\n'
+        '7. Arena Fantasi\n'
+        '8. Restoran, food court, dan snack corner\n'
+        '9. P3K\n'
+        '10. Keamanan\n'
+        '11. Spot foto yang unik dan instagramable\n'
+        '12. Merchandise Store\n'
+        '13. Minibus\n',
+    wahana: '1. Foto Studio\n'
+        '2. Gondola\n'
+        '3. Jembatan\n'
+        '4. Around The World\n'
+        '5. Sewa Kostum\n'
+        '6.Mississippi Boat\n'
+        '7. Duck Ride \n'
+        '8. Merry Go Round \n'
+        '9. Bumper Boat \n'
+        '10. Dragon Boat \n'
+        '11. Taxi Boat \n'
+        '12. paint ball \n'
+        '13. Labirin \n',
+    jam_dan_tiket: 'Jam Operasioanl : Senin - Jumat, 09.00-16.30 \n'
+        '                       : Sabtu - Minggu, 08.00-18.00\n'
+        'Harga               : Weekday Rp50.000, Weekend Rp60.000',
+  ),
   TravelDestination(
-      id: 4,
-      name: "Tanah Lot",
-      category: 'popular',
-      image: [
-        "https://images.unsplash.com/photo-1555865138-193ba536d7e0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1698799619978-872b701b44a8?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1566811851038-0580f1fb9082?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1664551577638-9a212d646b9b?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      location: 'Bali, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 100,
-      description:
-          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
-      rate: 4.7,
-      fasility: "BERIKAN FASILITAS",
-      wahana: "BERIKAN wahana",
-      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+    id: 4,
+    name: "Little Venice",
+    category: 'popular',
+    image: [
+      "assets/images/Little_Venice(1).png",
+      "assets/images/Little_Venice(2).jpg",
+      "assets/images/Little_Venice(3).jpg",
+      "assets/images/Little_Venice(4).jpg",
+    ],
+    location: 'Cipanas, Kotabunga ',
+    review: random.nextInt(250) + 20,
+    price: 30000,
+    description:
+        'Seperti namanya, Little Venice adalah tempat wisata yang meniru gaya kota Venezia di Italia. Kota ini terkenal banget sebagai salah satu destinasi liburan impian karena keindahannya dan juga keunikannya, karena sebagian kota seperti dibangun di atas laut sehingga menghasilkan banyak kanal-kanal air yang bisa ditelusuri dengan perahu kecil bernama gondola. Selain jalan-jalan dengan gondola ada banyak spot foto yang instagramable.',
+    rate: 4.7,
+    fasility: '1. Tempat parkir luas\n'
+        '2. Toilet\n'
+        '3. Masjid\n'
+        '4. Tempat Bermain Anak\n'
+        '5. Kolam Pancing\n'
+        '6. Tempat sampah\n'
+        '7. Arena Fantasi\n'
+        '8. Restoran, food court, dan snack corner\n'
+        '9. P3K\n'
+        '10. Keamanan\n'
+        '11. Spot foto yang unik dan instagramable\n'
+        '12. Merchandise Store',
+    wahana: '1. Foto Studio\n'
+        '2. Gondola\n'
+        '3. Jembatan\n'
+        '4. Around The World\n'
+        '5. Sewa Kostum\n'
+        '6.Mississippi Boat\n'
+        '7. Duck Ride \n'
+        '8. Merry Go Round \n'
+        '9. Bumper Boat \n'
+        '10. Dragon Boat \n'
+        '11. Taxi Boat \n',
+    jam_dan_tiket: 'Jam Operasioanl : Senin - Jumat, 09.00-16.30 \n'
+        '                       : Sabtu - Minggu, 08.00-18.00\n'
+        'Harga               : Masuk : 30000\n'
+        '             paket Fun: 90000',
+  ),
 
   // Recommended destinations
   TravelDestination(
@@ -147,7 +205,7 @@ List<TravelDestination> listDestination = [
       rate: 4.9,
       fasility: "BERIKAN FASILITAS",
       wahana: "BERIKAN wahana",
-      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
       id: 6,
       name: "Danau Toba",
@@ -166,7 +224,7 @@ List<TravelDestination> listDestination = [
       rate: 4.5,
       fasility: "BERIKAN FASILITAS",
       wahana: "BERIKAN wahana",
-      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
       id: 7,
       name: "Pink Beach",
@@ -185,7 +243,7 @@ List<TravelDestination> listDestination = [
       rate: 4.7,
       fasility: "BERIKAN FASILITAS",
       wahana: "BERIKAN wahana",
-      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
       id: 8,
       name: "Nusa Penida",
@@ -204,7 +262,7 @@ List<TravelDestination> listDestination = [
       rate: 4.7,
       fasility: "BERIKAN FASILITAS",
       wahana: "BERIKAN wahana",
-      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
   TravelDestination(
       id: 9,
       name: "Candi Borobudur",
@@ -223,5 +281,5 @@ List<TravelDestination> listDestination = [
       rate: 4.8,
       fasility: "BERIKAN FASILITAS",
       wahana: "BERIKAN wahana",
-      jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
 ];
