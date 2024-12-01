@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
+
 Random random = Random();
 
 class TravelDestination {
@@ -224,4 +226,54 @@ List<TravelDestination> listDestination = [
       fasility: "BERIKAN FASILITAS",
       wahana: "BERIKAN wahana",
       jam_dan_tiket:"BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+  TravelDestination(
+      id: 11,
+      name: "Curug Citambur",
+      category: 'rekomendasi',
+      image: [
+        'assets/images/citambur.jpg',
+        'assets/images/citambur2.jpg',
+        'assets/images/citambur3.jpg',
+        'assets/images/citambur4.jpg',
+      ],
+      location: 'Desa Karangjaya, Kecamatan Pasirkuda, Kabupaten Cianjur',
+      review: random.nextInt(250) + 20,
+      price: 150,
+      description:
+          'Curug Citambur adalah sebuah curug atau air terjun yang ketinggiannya kira-kira 130 meter di Kabupaten Cianjur bagian Selatan, Provinsi Jawa Barat, Indonesia. Curug Citambur memiliki tiga tingkatan air terjun dimana tingkat pertama berketinggian 12 meter sedangkan tingkat kedua berketinggian 116 meter dan yang paling tas adalah 2 meter',
+      rate: 4.8,
+      fasility: "Warung, Toilet, Camping ground, Area parkir yang luas, Musholla, View pegunungan.",
+      wahana: "curug",
+      jam_dan_tiket:"Jam Operasioanl : Senin - Minggu, 07.30 - 16.30 WIB\n"
+                    "Harga tiket masuk Curug Citambur: Rp10.000/orang\n"
+                    "Harga parkir motor: Rp3.000/motor\n"
+                    "Harga parkir mobil: Rp5.000/mobil"),
+  TravelDestination(
+      id: 12,
+      name: "Telaga Warna",
+      category: 'rekomendasi',
+      image: [
+        'assets/images/Telagawarna.jpg',
+        'assets/images/Telagawarna2.jpg',
+        'assets/images/Telagawarna3.jpg',
+        'assets/images/Telagawarna4.jpg',
+      ],
+      location: 'Jl. Raya Puncak No. KM 90, Kabupaten Cianjur',
+      review: random.nextInt(250) + 20,
+      price: 150,
+      description:
+          'Telaga Warna mempunyai keunikan yang khas yaitu dapat berubahnya warna permukaan air telaga. Telaga warna ditumbuhi jenis gulma air (Najas Gramininae) yang mendominasi seluruh permukaan telaga. Kawasan taman wisata telaga warna ini menawarkan panorama alam yang masih asri, terletak di pinggir sebuah telaga yang masih terjaga keasriannya, sehingga wistawan bisa menikmati pemandangan, dan mengelilingi danau menggunakan perahu atau rakit. ',
+      rate: 4.8,
+      fasility: "Area untuk outbond\n"
+                "Track alam\n"
+                "Shelter\n"
+                "Pos jaga\n"
+                "Pusat informasi\n"
+                "Menara pengintai setinggi 13,5 meter untuk mengamati burung.",
+      wahana: "telaga",
+      jam_dan_tiket:"Jam Operasioanl : Senin - Jumat,	08.00 - 16.00 WIB\n"
+                    "Sabtu - Minggu	08.00 - 18.00 WIB\n"
+                    "Harga tiket masuk Telaga Warna:\n"
+                    "wisatawan domestik Rp. 22.500/orang\n"
+                    "wisatawan asing Rp. 163.500/orang\n"),
 ];
