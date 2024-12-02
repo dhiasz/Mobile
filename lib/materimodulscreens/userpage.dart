@@ -16,14 +16,6 @@ class _UserpageState extends State<Userpage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HomePage(username: 'Kevin')));
-          },
-        ),
         title: Text(
           "Profile",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),

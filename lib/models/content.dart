@@ -20,7 +20,8 @@ class _DetailState extends State<Detail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      backgroundColor: Colors.white, // Opsional: menghilangkan shadow // Menghilangkan semua ikon di sebelah kanan
+      backgroundColor: Colors.white,
+       automaticallyImplyLeading: false, 
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
