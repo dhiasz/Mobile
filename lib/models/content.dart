@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
+import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 import 'package:wisata_mobile_5/models/destination_model.dart';
 
 class Detail extends StatefulWidget {
@@ -148,9 +148,9 @@ class _DetailState extends State<Detail> {
           left: 10,
           child: GestureDetector(
             onTap: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => Mystatefulwidget()),
+                MaterialPageRoute(builder: (context) => HomePage(username: 'Kevin')),
               );
             },
             child: CircleAvatar(
@@ -295,7 +295,7 @@ class _DetailState extends State<Detail> {
             Padding(
   padding: const EdgeInsets.all(10.0),
   child: Container(
-    height: 400, // Adjust height as needed
+    height: 600, // Adjust height as needed
     child: GridView.builder(
       itemCount: widget.destination.image!.length, // Menyesuaikan dengan jumlah gambar yang ada di destinasi
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

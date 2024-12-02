@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
+import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 import 'package:wisata_mobile_5/screens/splashscreen.dart';
 
 class Userpage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _UserpageState extends State<Userpage> {
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Mystatefulwidget()));
+                MaterialPageRoute(builder: (context) => HomePage(username: 'Kevin')));
           },
         ),
         title: Text(

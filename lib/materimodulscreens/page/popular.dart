@@ -142,7 +142,7 @@ class _ViewallState extends State<Viewall> {
                               context,
                               MaterialPageRoute(
                                 builder: (_) =>
-                                    Detail(destination: popular[index]),
+                                    Detail(destination: rekomendasi[index]),
                               ),
                             );
                           },

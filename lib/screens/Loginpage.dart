@@ -77,7 +77,7 @@ class LoginForm extends StatelessWidget {
                 String username = getUser.text;
 
                 // Navigasi ke HomePage dan kirimkan username
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => HomePage(username: username),

@@ -194,6 +194,8 @@ List<TravelDestination> listDestination = [
       image: [
         'assets/images/Cibeureum (2).jpg',
         'assets/images/Cibeureum.jpg',
+        'assets/images/Telagabiru.jpg',
+        'assets/images/Telagabiru(2).png',
       ],
       location: 'Jawa Timur, Indonesia',
       review: random.nextInt(250) + 20,

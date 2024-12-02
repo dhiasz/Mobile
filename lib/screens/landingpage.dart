@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
 import 'package:wisata_mobile_5/models/landing_model.dart';
+import 'package:wisata_mobile_5/screens/Loginpage.dart';
 
 class Landingpage extends StatefulWidget {
   const Landingpage({super.key});
@@ -59,7 +59,7 @@ class _LandingpageState extends State<Landingpage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Mystatefulwidget(),
+                        builder: (context) => LoginForm(),
                       ),
                     );
                   },
@@ -94,7 +94,7 @@ class _LandingpageState extends State<Landingpage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Mystatefulwidget(),
+                          builder: (context) => LoginForm(),
                         ),
                       );
                     },
