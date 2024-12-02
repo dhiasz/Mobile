@@ -210,64 +210,84 @@ List<TravelDestination> listDestination = [
                     '7. Spot foto yang unik dan instagramable\n',
       wahana: '1. Telaga Biru\n',
       jam_dan_tiket: 'Jam Operasioanl : Setiap hari07.00-14.00 \n'
-                    'Harga               :  Weekday: Rp16.000 Weekend Rp18.500',),
+                     'Harga               :  Weekday: Rp16.000 Weekend Rp18.500',),
   TravelDestination(
       id: 6,
-      name: "Danau Toba",
+      name: " Curug Cikondang",
       category: 'rekomendasi',
       image: [
-        "https://images.unsplash.com/photo-1440558929809-1412944a6225?q=80&w=1929&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1623598122059-9b5ef17619c8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1724909627713-866347d7d00e?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1617414372548-1ce628263337?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        'assets/images/Cikondang1.jpg',
+        'assets/images/Cikondang2.jpg',
+        'assets/images/Cikondang3.jpg',
+        'assets/images/Cikondang4.jpg',
       ],
-      location: 'Sumatera Utara, Indonesia',
+      location: 'cianjur selatan, Indonesia',
       review: random.nextInt(250) + 20,
-      price: 120,
+      price: 100,
       description:
-          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+          'Curug Cikondang merupakan air terjun yang menawarkan suasana alami dengan suara gemericik air yang menenangkan. Dikelilingi oleh perkebunan teh yang asri, curug ini sering disebut sebagai "Niagara Mini" oleh penduduk lokal. Pengunjung dapat menikmati pemandangan air terjun sambil bersantai di tepiannya.',
       rate: 4.5,
-      fasility: "BERIKAN FASILITAS",
-      wahana: "BERIKAN wahana",
-      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+      fasility: '1. Jalur trekking,\n'
+                 '2.  area parkir, toilet,\n'
+                 '3. gazebo,\n'
+                 '4. warung kecil.\n',
+      wahana:   '1. Spot foto air terjun,\n'
+                 '2. trekking ringan,\n'
+                 '3. area bermain air.\n',
+      jam_dan_tiket: 'Jam Operasioanl : Setiap hari 07.00-17.00 \n'
+                     'Harga           :   Rp 12.000/orang'),
   TravelDestination(
       id: 7,
-      name: "Pink Beach",
+      name: "Pantai Jayanti",
       category: 'rekomendasi',
       image: [
-        "https://images.unsplash.com/photo-1643044034131-001b53336bd0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1658642017201-45bb87756f1b?q=80&w=1962&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1571755931207-3ede68df575a?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1504964030113-79ab61954f0e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      location: 'NTT, Indonesia',
+        'assets/images/jayanti1.jpg',
+        'assets/images/jayanti2.jpg',
+        'assets/images/jayanti3.jpg',
+        'assets/images/jayanti4.jpg',
+       ],
+      location: 'Cianjur Selatan, Indonesia',
       review: random.nextInt(250) + 20,
       price: 350,
       description:
-          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+          'Pantai Jayanti dikenal dengan pasir putih yang bersih dan ombak yang tenang, membuatnya cocok untuk bersantai bersama keluarga. Pantai ini juga memiliki area dermaga yang sering dijadikan lokasi memancing oleh wisatawan. Pemandangan matahari terbit dan terbenam di sini sangat indah, menjadi daya tarik utama para pengunjung.',
       rate: 4.7,
-      fasility: "BERIKAN FASILITAS",
-      wahana: "BERIKAN wahana",
-      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+      fasility: '1. Area parkir luas,\n'
+                ' 2. gazebo, toilet,\n'
+                 '3. tempat bilas,\n'
+                ' 4 warung makan,\n'
+                 '5 penyewaan perahu.\n',
+      wahana:  '1. Perahu wisata,\n'
+               '2. area bermain pasir,\n'
+               '3. dermaga untuk memancing.\n',
+      jam_dan_tiket: 'Jam Operasioanl : Setiap hari 06.00-19.00 \n'
+                     'Harga           :   Rp 10.000/orang'),
   TravelDestination(
       id: 8,
-      name: "Nusa Penida",
+      name: "gunung padang ",
       category: 'rekomendasi',
       image: [
-        "https://images.unsplash.com/photo-1604430289272-0851a606105d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1711786120068-63c4306d8d0d?q=80&w=1916&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1672128557444-da9340a253f0?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      location: 'Bali, Indonesia',
+            'assets/images/padang1.jpg',
+            'assets/images/padang2.jpg',
+            'assets/images/padang3.jpg',
+            'assets/images/padang4.jpg',
+    ],
+      location: 'ciaanjur selatan, Indonesia',
       review: random.nextInt(250) + 20,
       price: 200,
       description:
-          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+          'Gunung Panang menawarkan keindahan alam yang memukau dengan panorama perbukitan hijau yang memanjakan mata. Pengunjung dapat menikmati trekking ringan, camping di area yang telah disediakan, serta spot foto yang menarik di puncak gunung. Tempat ini juga sering dijadikan lokasi wisata edukasi tentang flora dan fauna khas kawasan tersebut.',
       rate: 4.7,
-      fasility: "BERIKAN FASILITAS",
-      wahana: "BERIKAN wahana",
-      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+      fasility:  '1. Area camping,\n'
+                 '2. jalur trekking,\n'
+                 '3. gazebo untuk istirahat,\n'
+                 '4. toilet bersih,\n'
+                 '5. warung makan lokal.\n',
+      wahana:   '1. Spot foto puncak,\n'
+                '2. jalur pendakian pemula,\n'
+                ' 3. taman edukasi alam.\n,',
+      jam_dan_tiket: 'Jam Operasioanl : Setiap hari 06.00-17.00 \n'
+                     'Harga           :   Rp 10.000/orang'),
   TravelDestination(
       id: 9,
       name: "Candi Borobudur",
