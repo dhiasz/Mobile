@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_mobile_5/materimodulscreens/page/thenice.dart';
 import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 
 TextEditingController getUser = TextEditingController();
@@ -11,7 +12,10 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Form'),
+        title: const Text(
+          '', 
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         automaticallyImplyLeading: false, // Hilangkan panah kembali
       ),
       body: Padding(
@@ -19,28 +23,31 @@ class LoginForm extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 100),
+            Text(
+              'SIGN IN', 
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26.0), 
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 100),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
                 controller: getUser,
-                cursorColor: Colors.red,
+                cursorColor: Colors.black,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red, width: 2.0),
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
                   contentPadding:
                       EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red, width: 2.0),
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15),
                   ),
-                  suffixIcon: Icon(
-                    Icons.person,
-                    color: Colors.red,
-                  ),
+                
                   labelText: 'Username',
-                  labelStyle: TextStyle(color: Colors.red),
+                  labelStyle: TextStyle(color: Colors.black),
                 ),
               ),
             ),
@@ -48,24 +55,22 @@ class LoginForm extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
                 controller: getPass,
-                cursorColor: Colors.red,
+                cursorColor: Colors.black,
+                
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red, width: 2.0),
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
                   contentPadding:
                       EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red, width: 2.0),
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
-                  suffixIcon: Icon(
-                    Icons.lock,
-                    color: Colors.red,
-                  ),
+                  
                   labelText: 'Password',
-                  labelStyle: TextStyle(color: Colors.red),
+                  labelStyle: TextStyle(color: Colors.black),
                 ),
               ),
             ),
@@ -84,9 +89,9 @@ class LoginForm extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red, // Warna background button
+                backgroundColor: Colors.black, // Warna background button
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(8),
                 ),
               ),
               child: Text(
@@ -94,6 +99,19 @@ class LoginForm extends StatelessWidget {
                 style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
+            SizedBox(height: 20),
+            InkWell(
+              onTap: () {
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Thenice()),
+                );
+              },
+              child: Text(
+                'Sign Up',
+                style: TextStyle(color: Colors.blue,),
+              ),
+            )
           ],
         ),
       ),
