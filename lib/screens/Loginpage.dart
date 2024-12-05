@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 
-
-
 TextEditingController getUser = TextEditingController();
 TextEditingController getPass = TextEditingController();
 
@@ -14,6 +12,7 @@ class LoginForm extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login Form'),
+        automaticallyImplyLeading: false, // Hilangkan panah kembali
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -77,7 +76,7 @@ class LoginForm extends StatelessWidget {
                 String username = getUser.text;
 
                 // Navigasi ke HomePage dan kirimkan username
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => HomePage(username: username),

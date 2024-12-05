@@ -16,12 +16,6 @@ class _SettingpageState extends State<Settingpage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () {
-            // Tambahkan aksi tombol kembali
-          },
-        ),
         title: Text(
           "Profile",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
@@ -83,7 +77,7 @@ class _SettingpageState extends State<Settingpage> {
                   // Aksi ketika tombol Settings ditekan
                 }),
                 _buildMenuOption(Icons.logout, "Log Out", () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => Splashscreen()),
                   );

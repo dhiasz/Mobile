@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
+
 Random random = Random();
 
 class TravelDestination {
@@ -194,6 +196,8 @@ List<TravelDestination> listDestination = [
       image: [
         'assets/images/Cibeureum (2).jpg',
         'assets/images/Cibeureum.jpg',
+        'assets/images/Telagabiru.jpg',
+        'assets/images/Telagabiru(2).png',
       ],
       location: 'Jawa Timur, Indonesia',
       review: random.nextInt(250) + 20,
@@ -331,14 +335,77 @@ List<TravelDestination> listDestination = [
       description:
           'Pantai Apra di Desa Saganten, Kecamatan Sindangbarang, Cianjur, adalah destinasi wisata populer untuk berselancar. Ombak yang tinggi menarik wisatawan lokal dan mancanegara, menawarkan pengalaman menantang dan seru.',
       rate: 4.8,
-      fasility: '1. Area parkir luas,\n'
-                ' 2. gazebo, toilet,\n'
-                 '3. tempat bilas,\n'
-                ' 4 warung makan seafood,\n'
-                 '5 penyewaan perahu.\n',
-      wahana:  '1. Perahu wisata,\n'
-               '2. area bermain pasir,\n'
-               '3. dermaga untuk memancing.\n',
-      jam_dan_tiket: 'Jam Operasioanl : Setiap hari 07.00-19.00 \n'
-                     'Harga           :   Rp 15.000/orang'),
+      fasility: "BERIKAN FASILITAS",
+      wahana: "BERIKAN wahana",
+      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+  TravelDestination(
+      id: 10,
+      name: "Candi Borobudur",
+      category: 'rekomendasi',
+      image: [
+        "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1512631911403-3e3a06d12389?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1620549146396-9024d914cd99?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1631340729644-8b8aad1e9dba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
+      location: 'Jawa Tengah, Indonesia',
+      review: random.nextInt(250) + 20,
+      price: 150,
+      description:
+          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
+      rate: 4.8,
+      fasility: "BERIKAN FASILITAS",
+      wahana: "BERIKAN wahana",
+      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
+
+  TravelDestination(
+      id: 11,
+      name: "Curug Citambur",
+      category: 'popular',
+      image: [
+        'assets/images/citambur.jpg',
+        'assets/images/citambur2.jpg',
+        'assets/images/citambur3.jpg',
+        'assets/images/citambur4.jpg',
+      ],
+      location: 'Karangjaya,Pasrikuda, Cianjur',
+      review: random.nextInt(250) + 20,
+      price: 150,
+      description:
+          'Curug Citambur adalah sebuah curug atau air terjun yang ketinggiannya kira-kira 130 meter di Kabupaten Cianjur bagian Selatan, Provinsi Jawa Barat, Indonesia. Curug Citambur memiliki tiga tingkatan air terjun dimana tingkat pertama berketinggian 12 meter sedangkan tingkat kedua berketinggian 116 meter dan yang paling tas adalah 2 meter',
+      rate: 4.8,
+      fasility: "Warung, Toilet, Camping ground, Area parkir yang luas, Musholla, View pegunungan.",
+      wahana: "curug",
+      jam_dan_tiket:"Jam Operasioanl : Senin - Minggu, 07.30 - 16.30 WIB\n"
+                    "Harga tiket masuk Curug Citambur: Rp10.000/orang\n"
+                    "Harga parkir motor: Rp3.000/motor\n"
+                    "Harga parkir mobil: Rp5.000/mobil"),
+  TravelDestination(
+      id: 12,
+      name: "Telaga Warna",
+      category: 'rekomendasi',
+      image: [
+        'assets/images/Telagawarna.jpg',
+        'assets/images/Telagawarna2.jpg',
+        'assets/images/Telagawarna3.jpg',
+        'assets/images/Telagawarna4.jpg',
+      ],
+      location: 'Jl. Raya Puncak No. KM 90, Kabupaten Cianjur',
+      review: random.nextInt(250) + 20,
+      price: 150,
+      description:
+          'Telaga Warna mempunyai keunikan yang khas yaitu dapat berubahnya warna permukaan air telaga. Telaga warna ditumbuhi jenis gulma air (Najas Gramininae) yang mendominasi seluruh permukaan telaga. Kawasan taman wisata telaga warna ini menawarkan panorama alam yang masih asri, terletak di pinggir sebuah telaga yang masih terjaga keasriannya, sehingga wistawan bisa menikmati pemandangan, dan mengelilingi danau menggunakan perahu atau rakit. ',
+      rate: 4.8,
+      fasility: "Area untuk outbond\n"
+                "Track alam\n"
+                "Shelter\n"
+                "Pos jaga\n"
+                "Pusat informasi\n"
+                "Menara pengintai setinggi 13,5 meter untuk mengamati burung.",
+      wahana: "telaga",
+      jam_dan_tiket:"Jam Operasioanl : Senin - Jumat,	08.00 - 16.00 WIB\n"
+                    "Sabtu - Minggu	08.00 - 18.00 WIB\n"
+                    "Harga tiket masuk Telaga Warna:\n"
+                    "wisatawan domestik Rp. 22.500/orang\n"
+                    "wisatawan asing Rp. 163.500/orang\n"),
 ];

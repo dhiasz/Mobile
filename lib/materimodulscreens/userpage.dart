@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
+import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 import 'package:wisata_mobile_5/screens/splashscreen.dart';
 
 class Userpage extends StatefulWidget {
@@ -15,14 +16,6 @@ class _UserpageState extends State<Userpage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Mystatefulwidget()));
-          },
-        ),
         title: Text(
           "Profile",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
