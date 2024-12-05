@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/thenice.dart';
 import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
-import 'package:wisata_mobile_5/screens/signup_page.dart';
+import 'package:wisata_mobile_5/screens/Loginpage.dart';
 
 TextEditingController getUser = TextEditingController();
 TextEditingController getPass = TextEditingController();
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +23,15 @@ class LoginForm extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            SizedBox(height: 50),
+            SizedBox(height: 30),
             Text(
-              'SIGN IN', 
+              'SIGN UP', 
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26.0), 
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 50),
             Text(
-              'One Step Towards The Wonder Of Cipanas', 
+              'Please Enter Your Personal Data', 
               style: TextStyle(fontSize: 16.0), 
               textAlign: TextAlign.center,
             ),
@@ -61,7 +61,51 @@ class LoginForm extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  contentPadding:
+                      EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                
+                  labelText: 'Name',
+                  labelStyle: TextStyle(color: Colors.black),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
                 controller: getPass,
+                cursorColor: Colors.black,
+                
+                decoration: InputDecoration(
+                  
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  contentPadding:
+                      EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  
+                  labelText: 'Password',
+                  labelStyle: TextStyle(color: Colors.black),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
                 cursorColor: Colors.black,
                 
                 decoration: InputDecoration(
@@ -76,7 +120,7 @@ class LoginForm extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   
-                  labelText: 'Password',
+                  labelText: 'Confirm Password',
                   labelStyle: TextStyle(color: Colors.black),
                 ),
               ),
@@ -94,7 +138,7 @@ class LoginForm extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HomePage(username: username),
+                    builder: (context) => LoginForm(),
                   ),
                 );
               },
@@ -105,25 +149,11 @@ class LoginForm extends StatelessWidget {
                 ),
               ),
               child: Text(
-                'Sign In',
+                'Create',
                 style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
             ),
-            
-            SizedBox(height: 20),
-            InkWell(
-              onTap: () {
-                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SignupPage()),
-                );
-              },
-              child: Text(
-                'Sign Up',
-                style: TextStyle(color: Colors.blue,),
-              ),
-            )
           ],
         ),
       ),
