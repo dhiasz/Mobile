@@ -38,7 +38,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     // Inisialisasi halaman dengan meneruskan username ke UserPage
     _pages = [
-      buildutama(), // Halaman utama
+      buildutama(),
+      CalendarPage(), // Halaman utama
       Favorite(),
       builduser(widget.username, context), // Kirim username ke UserPage
     ];

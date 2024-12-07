@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_mobile_5/materimodulscreens/search.dart';
 import 'package:wisata_mobile_5/screens/Loginpage.dart';
 
 
@@ -14,7 +13,7 @@ class TravelApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SearchPage(),
+      home: LoginForm(),
     );
   }
 }
