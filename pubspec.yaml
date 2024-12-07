@@ -28,11 +28,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  provider: ^6.0.3
   flutter:
     sdk: flutter
-
-
+  table_calendar: ^3.0.8
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
@@ -101,6 +99,15 @@ flutter:
     - assets/images/padang2.jpg
     - assets/images/padang3.jpg
     - assets/images/padang4.jpg
+    # - assets/images/apra1.jpg
+    # - assets/images/apra2.jpg
+    # - assets/images/apra3.jpg
+    # - assets/images/apra4.jpg
+    # - assets/images/Mandalawangi1.jpg
+    # - assets/images/Mandalawangi2.jpg
+    # - assets/images/Mandalawangi3.jpg
+    # - assets/images/Mandalawangi4.jpg
+    # - assets/images/Mandalawangi5.jpg
     - assets/font/Lobster-Regular.ttf
     - assets/animation/splashscreen.json
  

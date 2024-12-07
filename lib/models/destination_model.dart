@@ -15,6 +15,7 @@ class TravelDestination {
       wahana,
       jam_dan_tiket;
   final double rate;
+  bool isBookmarked; // Tambahkan properti ini
 
   TravelDestination({
     required this.id,
@@ -29,6 +30,7 @@ class TravelDestination {
     required this.fasility,
     required this.wahana,
     required this.jam_dan_tiket,
+    this.isBookmarked = false,
   });
 }
 
@@ -292,45 +294,59 @@ List<TravelDestination> listDestination = [
                 ' 3. taman edukasi alam.\n,',
       jam_dan_tiket: 'Jam Operasioanl : Setiap hari 06.00-17.00 \n'
                      'Harga           :   Rp 10.000/orang'),
-  TravelDestination(
-      id: 9,
-      name: "Candi Borobudur",
-      category: 'rekomendasi',
-      image: [
-        "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1512631911403-3e3a06d12389?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1620549146396-9024d914cd99?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1631340729644-8b8aad1e9dba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      location: 'Jawa Tengah, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 150,
-      description:
-          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
-      rate: 4.8,
-      fasility: "BERIKAN FASILITAS",
-      wahana: "BERIKAN wahana",
-      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
-  TravelDestination(
-      id: 10,
-      name: "Candi Borobudur",
-      category: 'rekomendasi',
-      image: [
-        "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1512631911403-3e3a06d12389?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1620549146396-9024d914cd99?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1631340729644-8b8aad1e9dba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      location: 'Jawa Tengah, Indonesia',
-      review: random.nextInt(250) + 20,
-      price: 150,
-      description:
-          'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
-      rate: 4.8,
-      fasility: "BERIKAN FASILITAS",
-      wahana: "BERIKAN wahana",
-      jam_dan_tiket: "BERIKAN JAM DAN HARGA TIKET SEPERTI DI THE NICE"),
-
+//   TravelDestination(
+//       id: 9,
+//       name: "pantai Apra",
+//       category: 'rekomendasi',
+//       image: [
+//         'assets/images/apra1.jpg',
+//         'assets/images/apra2.jpg',
+//         'assets/images/apra3.jpg',
+//         'assets/images/apra4.jpg',
+//       ],
+//       location: 'cianjur selatan, Indonesia',
+//       review: random.nextInt(250) + 20,
+//       price: 150,
+//       description:
+//           'Pantai Apra di Desa Saganten, Kecamatan Sindangbarang, Cianjur, adalah destinasi wisata populer untuk berselancar. Ombak yang tinggi menarik wisatawan lokal dan mancanegara, menawarkan pengalaman menantang dan seru.',
+//       rate: 4.8,
+//       fasility: '1. Area parkir luas,\n'
+//                 ' 2. gazebo, toilet,\n'
+//                  '3. tempat bilas,\n'
+//                 ' 4 warung makan seafood,\n'
+//                  '5 penyewaan perahu.\n',
+//       wahana:  '1. Perahu wisata,\n'
+//                '2. area bermain pasir,\n'
+//                '3. dermaga untuk memancing.\n',
+//       jam_dan_tiket: 'Jam Operasioanl : Setiap hari 07.00-19.00 \n'
+//                      'Harga           :   Rp 15.000/orang'),
+//  TravelDestination(
+//       id: 10,
+//       name: "Mandalawangi",
+//       category: 'rekomendasi',
+//       image: [
+//         'assets/images/Mandalawangi1.jpg',
+//         'assets/images/Mandalawangi2.jpg',
+//         'assets/images/Mandalawangi3.jpg',
+//         'assets/images/Mandalawangi4.jpg',
+//         'assets/images/Mandalawangi5.jpg',
+//       ],
+//       location: 'cianjur selatan, Indonesia',
+//       review: random.nextInt(250) + 20,
+//       price: 150,
+//       description:
+//           'Pantai Apra di Desa Saganten, Kecamatan Sindangbarang, Cianjur, adalah destinasi wisata populer untuk berselancar. Ombak yang tinggi menarik wisatawan lokal dan mancanegara, menawarkan pengalaman menantang dan seru.',
+//       rate: 4.8,
+//       fasility: '1. Area parkir luas,\n'
+//                 ' 2. gazebo, toilet,\n'
+//                  '3. tempat bilas,\n'
+//                 ' 4 warung makan seafood,\n'
+//                  '5 penyewaan perahu.\n',
+//       wahana:  '1. Perahu wisata,\n'
+//                '2. area bermain pasir,\n'
+//                '3. dermaga untuk memancing.\n',
+//       jam_dan_tiket: 'Jam Operasioanl : Setiap hari 07.00-19.00 \n'
+//                      'Harga           :   Rp 15.000/orang'),
   TravelDestination(
       id: 11,
       name: "Curug Citambur",

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/materimodulscreens/searchpage.dart';
-import 'package:wisata_mobile_5/materimodulscreens/settingpage.dart';
+import 'package:wisata_mobile_5/materimodulscreens/Favorite.dart';
 import 'package:wisata_mobile_5/materimodulscreens/userpage.dart';
 import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 
@@ -47,8 +47,8 @@ class _MainPageState extends State<MainPage> {
     // Now initialize the pages list with the username
     _pages = [
       HomePage(username: username),  // Pass the username to HomePage
-    Searchpage(), // Halaman Cari
-    Settingpage(), // Halaman Pengaturan
+    CalendarPage(), // Halaman Cari
+    Favorite(), // Halaman Pengaturan
     Userpage(), // Halaman Pengguna  // Pass the username to UserPage
     ];
   }

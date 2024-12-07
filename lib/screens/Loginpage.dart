@@ -1,127 +1,176 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_mobile_5/materimodulscreens/page/thenice.dart';
 import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 import 'package:wisata_mobile_5/screens/signup_page.dart';
 
-TextEditingController getUser = TextEditingController();
-TextEditingController getPass = TextEditingController();
-
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
+
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  final TextEditingController getUser = TextEditingController();
+  final TextEditingController getPass = TextEditingController();
+
+  bool isButtonEnabled = false;
+
+  @override
+  void initState() {
+    super.initState();
+    getUser.addListener(_checkInput);
+    getPass.addListener(_checkInput);
+  }
+
+  @override
+  void dispose() {
+    getUser.dispose();
+    getPass.dispose();
+    super.dispose();
+  }
+
+  void _checkInput() {
+    setState(() {
+      isButtonEnabled = getUser.text.isNotEmpty && getPass.text.isNotEmpty;
+    });
+  }
+
+  void _showSnackBar(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: Colors.red,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: const Text(
-          '', 
+          '',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         automaticallyImplyLeading: false, // Hilangkan panah kembali
       ),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            SizedBox(height: 50),
-            Text(
-              'SIGN IN', 
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26.0), 
+            const SizedBox(height: 50),
+            const Text(
+              'LOGIN',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60.0),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 50),
-            Text(
-              'One Step Towards The Wonder Of Cipanas', 
-              style: TextStyle(fontSize: 16.0), 
-              textAlign: TextAlign.center,
+            const SizedBox(height: 50),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40.0),
+              child: Text(
+                'One Step Towards The Wonder Of Cianjur. Miindung ka waktu, Mibapa ka zaman',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 35.0),
               child: TextFormField(
                 controller: getUser,
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   contentPadding:
-                      EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
+                      const EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                
                   labelText: 'Username',
-                  labelStyle: TextStyle(color: Colors.black),
+                  labelStyle: const TextStyle(color: Colors.black),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 35.0),
               child: TextFormField(
                 controller: getPass,
                 cursorColor: Colors.black,
-                
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
-                  contentPadding:
-                      EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
+                  contentPadding: const EdgeInsets.only(
+                    left: 30.0,
+                    top: 20.0,
+                    bottom: 20.0,
+                  ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
-                  
                   labelText: 'Password',
-                  labelStyle: TextStyle(color: Colors.black),
+                  labelStyle: const TextStyle(color: Colors.black),
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SizedBox(
               width: 300.0,
               height: 50.0,
               child: ElevatedButton(
-              onPressed: () {
-                // Ambil username dari TextField
-                String username = getUser.text;
+                onPressed: isButtonEnabled
+                    ? () {
+                        // Ambil username dari TextField
+                        String username = getUser.text;
 
-                // Navigasi ke HomePage dan kirimkan username
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(username: username),
+                        // Navigasi ke HomePage dan kirimkan username
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(username: username),
+                          ),
+                        );
+                      }
+                    : () {
+                        _showSnackBar(
+                            context, 'Tolong Masukan Username dan Password');
+                      },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black, // Warna background button
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black, // Warna background button
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: const Text(
+                  'Sign In',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
-              child: Text(
-                'Sign In',
-                style: TextStyle(fontSize: 20, color: Colors.white),
-              ),
             ),
-            ),
-            
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
+            const Text("Don't have an account?  "),
             InkWell(
               onTap: () {
-                 Navigator.push(
+                Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const SignupPage()),
                 );
               },
-              child: Text(
+              child: const Text(
                 'Sign Up',
-                style: TextStyle(color: Colors.blue,),
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
               ),
             )
           ],

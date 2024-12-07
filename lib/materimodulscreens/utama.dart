@@ -6,7 +6,7 @@ import 'package:wisata_mobile_5/materimodulscreens/page/curugciberem.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/popular.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/thenice.dart';
 import 'package:wisata_mobile_5/materimodulscreens/searchpage.dart';
-import 'package:wisata_mobile_5/materimodulscreens/settingpage.dart';
+import 'package:wisata_mobile_5/materimodulscreens/Favorite.dart';
 import 'package:wisata_mobile_5/materimodulscreens/userpage.dart';
 import 'package:wisata_mobile_5/models/content.dart';
 import 'package:wisata_mobile_5/models/destination_model.dart';
@@ -39,8 +39,7 @@ class _HomePageState extends State<HomePage> {
     // Inisialisasi halaman dengan meneruskan username ke UserPage
     _pages = [
       buildutama(), // Halaman utama
-      Searchpage(),
-      Settingpage(),
+      Favorite(),
       builduser(widget.username, context), // Kirim username ke UserPage
     ];
   }

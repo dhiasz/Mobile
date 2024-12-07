@@ -165,18 +165,28 @@ class _DetailState extends State<Detail> {
           ),
         ),
         // Bookmark
-        Positioned(
-          top: 10,
-          right: 10,
-          child: CircleAvatar(
-            radius: 20.0,
-            backgroundColor: Colors.black.withOpacity(0.3),
-            child: Icon(
-              Icons.bookmark_outline_rounded,
-              color: Colors.white,
-            ),
-          ),
-        ),
+       Positioned(
+  top: 10,
+  right: 10,
+  child: GestureDetector(
+    onTap: () {
+      setState(() {
+        widget.destination.isBookmarked = !widget.destination.isBookmarked; // Toggle status
+      });
+    },
+    child: CircleAvatar(
+      radius: 20.0,
+      backgroundColor: Colors.black.withOpacity(0.3),
+      child: Icon(
+        widget.destination.isBookmarked
+            ? Icons.bookmark  // Bookmark aktif
+            : Icons.bookmark_outline_rounded, // Bookmark tidak aktif
+        color: Colors.white,
+      ),
+    ),
+  ),
+),
+
       ],
     ),
   ),
