@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_mobile_5/screens/Loginpage.dart';
+import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 
 
 void main() {
@@ -11,9 +11,9 @@ class TravelApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginForm(),
+      home: HomePage(username: 'byn',),
     );
   }
 }

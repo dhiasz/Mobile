@@ -20,7 +20,7 @@ class _FormscreenState extends State<Formscreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text("Tampilan Form"),
+        title: const Text("Tampilan Form"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.9),
@@ -35,7 +35,7 @@ class _FormscreenState extends State<Formscreen> {
                 });
               },
               controller: textEditingController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Masukan Nama',
                 border: OutlineInputBorder(), // This makes it rectangular
                 // Optionally add more styling like padding or focused border
@@ -47,10 +47,10 @@ class _FormscreenState extends State<Formscreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Jenis Kelamin Radio Buttons
-            Text('Jenis Kelamin:'),
+            const Text('Jenis Kelamin:'),
             Row(
               children: [
                 Radio<String>(
@@ -62,7 +62,7 @@ class _FormscreenState extends State<Formscreen> {
                     });
                   },
                 ),
-                Text('Laki-laki'),
+                const Text('Laki-laki'),
                 Radio<String>(
                   value: 'perempuan',
                   groupValue: selectedRadio,
@@ -72,14 +72,14 @@ class _FormscreenState extends State<Formscreen> {
                     });
                   },
                 ),
-                Text('Perempuan'),
+                const Text('Perempuan'),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Olahraga Checkbox
             CheckboxListTile(
-              title: Text('Olahraga'),
+              title: const Text('Olahraga'),
               value: olahraga,
               onChanged: (value) {
                 setState(() {
@@ -90,7 +90,7 @@ class _FormscreenState extends State<Formscreen> {
 
             // Seni Checkbox
             CheckboxListTile(
-              title: Text('Seni'),
+              title: const Text('Seni'),
               value: seni,
               onChanged: (value) {
                 setState(() {
@@ -99,11 +99,11 @@ class _FormscreenState extends State<Formscreen> {
               },
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Lulus Switch
             SwitchListTile(
-              title: Text('Lulus'),
+              title: const Text('Lulus'),
               value: switchValue,
               onChanged: (value) {
                 setState(() {
@@ -122,7 +122,7 @@ class _FormscreenState extends State<Formscreen> {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Text('Form Submitted'),
+                      title: const Text('Form Submitted'),
                       content: Text(
                           'Nama: $nama\nJenis Kelamin: $selectedRadio\nOlahraga: $olahraga\nSeni: $seni\nLulus: $switchValue'),
                       actions: [
@@ -130,20 +130,20 @@ class _FormscreenState extends State<Formscreen> {
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
-                          child: Text('OK'),
+                          child: const Text('OK'),
                         ),
                       ],
                     ),
                   );
                 },
-
-                
-                child: Text('Submit'),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5))),
+
+                
+                child: const Text('Submit'),
               ),
             ),
           ],

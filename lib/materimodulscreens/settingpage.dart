@@ -16,7 +16,7 @@ class _SettingpageState extends State<Settingpage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Text(
+        title: const Text(
           "Profile",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
@@ -30,13 +30,13 @@ class _SettingpageState extends State<Settingpage> {
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: Column(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 50,
                   backgroundImage: AssetImage(
                       'assets//images/barbie.jpg'), // Ganti dengan gambar profil
                 ),
-                SizedBox(height: 10),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   "Kevin",
                   style: TextStyle(
                     fontSize: 22,
@@ -44,7 +44,7 @@ class _SettingpageState extends State<Settingpage> {
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   "Kevin@maling.com",
                   style: TextStyle(
@@ -57,7 +57,7 @@ class _SettingpageState extends State<Settingpage> {
           ),
 
           // Bagian Statistik
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           // Bagian Tombol Menu
@@ -79,7 +79,7 @@ class _SettingpageState extends State<Settingpage> {
                 _buildMenuOption(Icons.logout, "Log Out", () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => Splashscreen()),
+                    MaterialPageRoute(builder: (context) => const Splashscreen()),
                   );
                 }),
               ],
@@ -104,7 +104,7 @@ class _SettingpageState extends State<Settingpage> {
                 color: Colors.black.withOpacity(0.7),
                 blurRadius: 3,
                 spreadRadius: 1,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               ),
             ],
           ),

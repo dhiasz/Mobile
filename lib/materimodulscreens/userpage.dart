@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
-import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 import 'package:wisata_mobile_5/screens/splashscreen.dart';
 
 class Userpage extends StatefulWidget {
@@ -16,7 +14,7 @@ class _UserpageState extends State<Userpage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           "Profile",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
@@ -30,13 +28,13 @@ class _UserpageState extends State<Userpage> {
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: Column(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 50,
                   backgroundImage: AssetImage(
                       'assets//images/barbie.jpg'), // Ganti dengan gambar profil
                 ),
-                SizedBox(height: 10),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   "Kevin",
                   style: TextStyle(
                     fontSize: 22,
@@ -44,7 +42,7 @@ class _UserpageState extends State<Userpage> {
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   "Kevin@maling.com",
                   style: TextStyle(
@@ -57,7 +55,7 @@ class _UserpageState extends State<Userpage> {
           ),
 
           // Bagian Statistik
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           // Bagian Tombol Menu
@@ -79,7 +77,7 @@ class _UserpageState extends State<Userpage> {
                 _buildMenuOption(Icons.logout, "Log Out", () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Splashscreen()),
+                    MaterialPageRoute(builder: (context) => const Splashscreen()),
                   );
                 }),
               ],
@@ -104,7 +102,7 @@ class _UserpageState extends State<Userpage> {
                 color: Colors.black.withOpacity(0.7),
                 blurRadius: 3,
                 spreadRadius: 1,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               ),
             ],
           ),

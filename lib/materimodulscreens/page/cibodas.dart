@@ -6,13 +6,22 @@ import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
 class Cibodas extends StatefulWidget {
   const Cibodas({super.key});
 
+  // final String destinationName;
+
+  // Cibodas({required this.destinationName});
+
   @override
   State<Cibodas> createState() => _CibodasState();
 }
 
+
+
 class _CibodasState extends State<Cibodas> {
+
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -33,7 +42,7 @@ class _CibodasState extends State<Cibodas> {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.5),
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                       blurRadius: 3,
                       spreadRadius: 3,
                     )
@@ -55,16 +64,16 @@ class _CibodasState extends State<Cibodas> {
                         child: BackdropFilter(
                           filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 5.0),
+                            padding: const EdgeInsets.symmetric(horizontal: 5.0),
                             height: 75,
                             width: 224,
                             decoration: BoxDecoration(
                               color: Colors.transparent,
                               borderRadius: BorderRadius.circular(15.0),
                             ),
-                            child: Text(
+                            child: const Text(
                               'Kebun Raya Cibodas',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 height: 2,
                                 color: Colors.white,
                                 fontSize: 18.0,
@@ -84,13 +93,13 @@ class _CibodasState extends State<Cibodas> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Mystatefulwidget()),
+                                builder: (context) => const Mystatefulwidget()),
                           );
                         },
                         child: CircleAvatar(
                           radius: 20.0, // Ukuran gambar avatar
                           backgroundColor: Colors.black.withOpacity(0.3),
-                          child: Icon(
+                          child: const Icon(
                             Icons
                                 .arrow_back_ios_new_outlined, // Sesuaikan dengan icon yang diinginkan
                             color: Colors.white,
@@ -105,7 +114,7 @@ class _CibodasState extends State<Cibodas> {
                       child: CircleAvatar(
                         radius: 20.0, // Ukuran gambar avatar
                         backgroundColor: Colors.black.withOpacity(0.3),
-                        child: Icon(
+                        child: const Icon(
                           Icons
                               .bookmark_outline_rounded, // Sesuaikan dengan icon yang diinginkan
                           color: Colors.white,

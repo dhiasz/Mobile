@@ -1,34 +1,30 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:wisata_mobile_5/materimodulscreens/page/cibodas.dart';
-import 'package:wisata_mobile_5/materimodulscreens/page/curugciberem.dart';
+import 'package:wisata_mobile_5/materimodulscreens/bookmarked.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/popular.dart';
-import 'package:wisata_mobile_5/materimodulscreens/page/thenice.dart';
 import 'package:wisata_mobile_5/materimodulscreens/searchpage.dart';
 import 'package:wisata_mobile_5/materimodulscreens/settingpage.dart';
-import 'package:wisata_mobile_5/materimodulscreens/userpage.dart';
 import 'package:wisata_mobile_5/models/content.dart';
 import 'package:wisata_mobile_5/models/destination_model.dart';
-import 'package:wisata_mobile_5/screens/Loginpage.dart';
 import 'package:wisata_mobile_5/screens/splashscreen.dart';
 
 class HomePage extends StatefulWidget {
   final String username;
 
-  const HomePage({Key? key, required this.username}) : super(key: key);
+  const HomePage({super.key, required this.username});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0; // Indeks tab yang aktif
+      int _currentIndex = 0; // Indeks tab yang aktif
 
-  int _selectedIndex = 0;
-  TextEditingController getUser =
+      int _selectedIndex = 0;
+      TextEditingController getUser =
       TextEditingController(); // Controller for username
-  late String username; // Declare a variable to store the username
+      late String username; // Declare a variable to store the username
 
   // Initialize the list of pages
   List<Widget> _pages = [];
@@ -39,8 +35,8 @@ class _HomePageState extends State<HomePage> {
     // Inisialisasi halaman dengan meneruskan username ke UserPage
     _pages = [
       buildutama(), // Halaman utama
-      Searchpage(),
-      Settingpage(),
+      const Searchpage(),
+      const Settingpage(),
       builduser(widget.username, context), // Kirim username ke UserPage
     ];
   }
@@ -155,9 +151,9 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 // Bagian kanan: CircleAvatar
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 20.0, // Ukuran gambar avatar
-                  backgroundImage: const NetworkImage(
+                  backgroundImage: NetworkImage(
                     'https://i.pinimg.com/564x/52/46/49/524649971a55b2f3a0dae1d537c61098.jpg',
                   ),
                 ),
@@ -215,7 +211,7 @@ class _HomePageState extends State<HomePage> {
                           // Aksi ketika "View all" diklik
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Viewall()),
+                            MaterialPageRoute(builder: (context) => const Viewall()),
                           );
                         },
                         child: const Text(
@@ -233,10 +229,10 @@ class _HomePageState extends State<HomePage> {
             ),
 
             // Kotak hitam dengan aksi ketukan
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Container(
+              child: SizedBox(
                 height: 45.0,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -338,11 +334,11 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(right: 15),
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.pushReplacement(
+                            Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) =>
-                                    Detail(destination: popular[index]),
+                                builder: (context) =>
+                                    Detail(destination: popular[index],),
                               ),
                             );
                           },
@@ -433,7 +429,7 @@ Widget builduser(String username, BuildContext context) {
       backgroundColor: Colors.white,
       elevation: 0,
       automaticallyImplyLeading: false, // Hilangkan panah kembali
-      title: Text(
+      title: const Text(
         "Profile",
         style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
       ),
@@ -447,23 +443,23 @@ Widget builduser(String username, BuildContext context) {
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: Column(
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 50,
                 backgroundImage: AssetImage(
                     'assets//images/barbie.jpg'), // Ganti dengan gambar profil
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
-                "$username",
-                style: TextStyle(
+                username,
+                style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(
-                "${username}@maling.com",
+                "$username@maling.com",
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey[600],
@@ -474,7 +470,7 @@ Widget builduser(String username, BuildContext context) {
         ),
 
         // Bagian Statistik
-        SizedBox(
+        const SizedBox(
           height: 20.0,
         ),
         // Bagian Tombol Menu
@@ -485,7 +481,10 @@ Widget builduser(String username, BuildContext context) {
                 // Aksi ketika tombol Profile ditekan
               }),
               _buildMenuOption(Icons.bookmark, "Bookmarked", () {
-                // Aksi ketika tombol Bookmarked ditekan
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BookmarkPage()),
+                );
               }),
               _buildMenuOption(Icons.history, "Previous Trips", () {
                 // Aksi ketika tombol Previous Trips ditekan
@@ -496,7 +495,7 @@ Widget builduser(String username, BuildContext context) {
               _buildMenuOption(Icons.logout, "Log Out", () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Splashscreen()),
+                  MaterialPageRoute(builder: (context) => const Splashscreen()),
                 );
               }),
             ],
@@ -521,7 +520,7 @@ Widget _buildMenuOption(IconData icon, String title, VoidCallback onTap) {
               color: Colors.black.withOpacity(0.7),
               blurRadius: 3,
               spreadRadius: 1,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
         ),

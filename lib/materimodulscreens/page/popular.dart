@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/models/content.dart';
 import 'package:wisata_mobile_5/models/destination_model.dart';
+import 'package:wisata_mobile_5/screens/signup_page.dart';
 import 'package:wisata_mobile_5/utils/const.dart';
 import 'package:wisata_mobile_5/widget/rekomendasi_destination.dart';
 
@@ -38,8 +39,8 @@ class _ViewallState extends State<Viewall> {
         child: AppBar(
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false, // Menghapus tombol kembali default
-          flexibleSpace: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+          flexibleSpace: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment:
@@ -49,7 +50,7 @@ class _ViewallState extends State<Viewall> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(height: 15.0),
                     Text(
                       'Hi, Kevin 👋',
@@ -69,7 +70,7 @@ class _ViewallState extends State<Viewall> {
                   ],
                 ),
                 // Bagian kanan: CircleAvatar
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 20.0, // Ukuran gambar avatar
                   backgroundImage: NetworkImage(
                     'https://i.pinimg.com/564x/52/46/49/524649971a55b2f3a0dae1d537c61098.jpg',
@@ -106,9 +107,9 @@ class _ViewallState extends State<Viewall> {
                   ),
                 ),
                 const SizedBox(height: 30.0),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     Text(
                       'Popular places',
                       style: TextStyle(
@@ -168,7 +169,7 @@ class _ViewallState extends State<Viewall> {
                               context,
                               MaterialPageRoute(
                                 builder: (_) =>
-                                    Detail(destination: rekomendasi[index]),
+                                    Detail(destination: rekomendasi[index],),
                               ),
                             );
                           },
