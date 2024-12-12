@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/models/landing_model.dart';
 import 'package:wisata_mobile_5/screens/Loginpage.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Landingpage extends StatefulWidget {
   const Landingpage({super.key});
@@ -104,13 +105,10 @@ class _LandingpageState extends State<Landingpage> {
                         Expanded(
                           child: Text(
                             landingpage[currentIndex].name,  // Menampilkan nama dari LandingModel
-                            style: const TextStyle(
-                              fontSize: 20,
+                            style: GoogleFonts.poppins(fontSize: 20,
                               color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Lobster',
-                              height: 1.5,
-                            ),
+                              fontWeight: FontWeight.w900,
+                              height: 1.5,)
                           ),
                         ),
                         const Icon(

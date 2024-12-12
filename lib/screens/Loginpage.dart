@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 import 'package:wisata_mobile_5/screens/signup_page.dart';
 
@@ -53,7 +54,7 @@ class _LoginFormState extends State<LoginForm> {
           '',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        automaticallyImplyLeading: false, // Hilangkan panah kembali
+
       ),
       backgroundColor: Colors.white,
       body: Padding(
@@ -61,24 +62,24 @@ class _LoginFormState extends State<LoginForm> {
         child: Column(
           children: [
             const SizedBox(height: 50),
-            const Text(
+             Text(
               'LOGIN',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60.0),
+              style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 60.0),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 50),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0),
+              padding: EdgeInsets.symmetric(horizontal: 50.0),
               child: Text(
-                'One Step Towards The Wonder Of Cianjur. Miindung ka waktu, Mibapa ka zaman',
-                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                'Miindung ka waktu, Mibapa ka zaman',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(height: 50),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 35.0),
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
                 controller: getUser,
                 cursorColor: Colors.black,
@@ -93,14 +94,14 @@ class _LoginFormState extends State<LoginForm> {
                     borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  labelText: 'Username',
-                  labelStyle: const TextStyle(color: Colors.black),
+                  labelText: 'Email or Username',
+                  labelStyle: const TextStyle(color: Colors.black), fillColor: Colors.grey
                 ),
               ),
             ),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 35.0),
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
                 controller: getPass,
                 cursorColor: Colors.black,
@@ -119,13 +120,13 @@ class _LoginFormState extends State<LoginForm> {
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   labelText: 'Password',
-                  labelStyle: const TextStyle(color: Colors.black),
+                  labelStyle: const TextStyle(color: Colors.black), fillColor: Colors.grey, focusColor: Colors.white
                 ),
               ),
             ),
             const SizedBox(height: 20),
             SizedBox(
-              width: 300.0,
+              width: 320.0,
               height: 50.0,
               child: ElevatedButton(
                 onPressed: isButtonEnabled

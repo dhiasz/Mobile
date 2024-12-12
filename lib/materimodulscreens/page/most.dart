@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/models/content.dart';
 import 'package:wisata_mobile_5/models/destination_model.dart';
-import 'package:wisata_mobile_5/utils/const.dart';
 import 'package:wisata_mobile_5/widget/rekomendasi_destination.dart';
 
-class Viewall extends StatefulWidget {
-  const Viewall({super.key});
+class Most extends StatefulWidget {
+  const Most({super.key});
 
   @override
-  State<Viewall> createState() => _ViewallState();
+  State<Most> createState() => _MostState();
 }
 
-class _ViewallState extends State<Viewall> {
+class _MostState extends State<Most> {
   // List kategori populer dan rekomendasi
   List<TravelDestination> popular = listDestination
       .where((element) => element.category == 'popular')
@@ -90,9 +89,7 @@ class _ViewallState extends State<Viewall> {
                 // Avatar profil
                 const CircleAvatar(
                   radius: 20.0,
-                  backgroundImage: NetworkImage(
-                    'https://i.pinimg.com/564x/52/46/49/524649971a55b2f3a0dae1d537c61098.jpg',
-                  ),
+                  backgroundImage: AssetImage('assets/images/barbie.jpg')
                 ),
               ],
             ),
@@ -133,7 +130,7 @@ class _ViewallState extends State<Viewall> {
                 if (searchController.text.isEmpty) ...[
                   // Tampilan awal berdasarkan kategori
                   const Text(
-                    'Popular',
+                    'Most Viewed',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -161,36 +158,7 @@ class _ViewallState extends State<Viewall> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 30.0),
-                  const Text(
-                    'Rekomendasi',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
                   const SizedBox(height: 20),
-                  Column(
-                    children: List.generate(
-                      rekomendasi.length,
-                      (index) => Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => Detail(destination: rekomendasi[index]),
-                              ),
-                            );
-                          },
-                          child: RekomendasiDestination(
-                            destination: rekomendasi[index],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                 ] else ...[
                   // Tampilan hasil pencarian
                   const Text(

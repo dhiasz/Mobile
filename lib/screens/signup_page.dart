@@ -17,10 +17,12 @@ class SignupPage extends StatelessWidget {
           '', 
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        automaticallyImplyLeading: false, // Hilangkan panah kembali
+        
+      backgroundColor: Colors.white,
       ),
+      backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
         child: Column(
           children: [
             SizedBox(height: 30),
@@ -37,7 +39,7 @@ class SignupPage extends StatelessWidget {
             ),
             SizedBox(height: 50),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
                 controller: getUser,
                 cursorColor: Colors.black,
@@ -59,7 +61,7 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
@@ -80,7 +82,7 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
                 controller: getPass,
                 cursorColor: Colors.black,
@@ -104,7 +106,7 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
                 cursorColor: Colors.black,
                 
@@ -138,7 +140,7 @@ class SignupPage extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoginForm(),
+                    builder: (context) => HomePage(username: username),
                   ),
                 );
               },
@@ -149,7 +151,7 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
               child: Text(
-                'Create',
+                'Sign Up',
                 style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),

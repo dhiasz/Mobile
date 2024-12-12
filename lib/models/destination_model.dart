@@ -47,7 +47,7 @@ List<TravelDestination> listDestination = [
       ],
       location: 'Cianjur, Mariwati-Sukaresmi',
       review: random.nextInt(250) + 20,
-      price: 30000,
+      price: 30,
       description:
           'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
       rate: 4.8,

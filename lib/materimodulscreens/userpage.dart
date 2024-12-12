@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_mobile_5/materimodulscreens/Favorite.dart';
 import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
 import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 import 'package:wisata_mobile_5/screens/splashscreen.dart';
@@ -69,9 +70,12 @@ class _UserpageState extends State<Userpage> {
                 }),
                 _buildMenuOption(Icons.bookmark, "Bookmarked", () {
                   // Aksi ketika tombol Bookmarked ditekan
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder: (context) => Favorite())
+                  );
                 }),
                 _buildMenuOption(Icons.history, "Previous Trips", () {
-                  // Aksi ketika tombol Previous Trips ditekan
                 }),
                 _buildMenuOption(Icons.settings, "Settings", () {
                   // Aksi ketika tombol Settings ditekan

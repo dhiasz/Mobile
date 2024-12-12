@@ -7,11 +7,11 @@ class LandingModel {
 List<LandingModel> landingpage = [
   LandingModel(
       image: 'assets/images/Thenicepark.jpg',
-      name: 'Jelajahi Indonesia Bersama Kami'),
+      name: 'JAUH DIJUGJUG, ANGGANG DITEANG'),
   LandingModel(
       image: 'assets/images/Little_Venice(1).png',
-      name: 'Keindahan Alam Indonesia'),
+      name: 'KUDU SEUBEUH MEMEH DAHAR, KUDU NEPI MEMEH INDIT'),
   LandingModel(
       image: 'assets/images/KebunRayaCibodas(1).jpg',
-      name: 'Kesejukan Angin Pegunungan'),
+      name: 'TINA PEURIH JADI PEURAH'),
 ];

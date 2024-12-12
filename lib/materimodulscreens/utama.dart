@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/cibodas.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/curugciberem.dart';
+import 'package:wisata_mobile_5/materimodulscreens/page/most.dart';
+import 'package:wisata_mobile_5/materimodulscreens/page/near.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/popular.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/thenice.dart';
 import 'package:wisata_mobile_5/materimodulscreens/searchpage.dart';
@@ -70,20 +72,20 @@ class _HomePageState extends State<HomePage> {
         items: const [
           BottomNavigationBarItem(
             backgroundColor: Colors.white,
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.home_filled),
+            label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.access_time_rounded),
-            label: 'Time',
+            label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border),
-            label: 'Settings',
+            label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-            label: 'User',
+            label: '',
           ),
         ],
       ),
@@ -157,8 +159,8 @@ class _HomePageState extends State<HomePage> {
                 // Bagian kanan: CircleAvatar
                 CircleAvatar(
                   radius: 20.0, // Ukuran gambar avatar
-                  backgroundImage: const NetworkImage(
-                    'https://i.pinimg.com/564x/52/46/49/524649971a55b2f3a0dae1d537c61098.jpg',
+                  backgroundImage: AssetImage(
+                    'assets//images/barbie.jpg', // Ganti dengan gambar profil
                   ),
                 ),
               ],
@@ -172,7 +174,6 @@ class _HomePageState extends State<HomePage> {
             _resetColors, // Reset warna kotak ke abu-abu jika tap terjadi di luar kotak
         child: ListView(
           children: [
-            
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
@@ -224,11 +225,10 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: GestureDetector(
                         onTap: () {
-                          setState(() {
-                            _isTapped1 =
-                                !_isTapped1; // Toggle warna kotak pertama
-                            _isTapped2 = false; // Reset kotak kedua
-                          });
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Most()),
+                          );
                         },
                         child: Container(
                           height: 45.0,
@@ -257,25 +257,20 @@ class _HomePageState extends State<HomePage> {
                     ),
                     // Kotak kedua ('Nearby')
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10.0,
-                      ),
-                      child: GestureDetector(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: InkWell(
                         onTap: () {
-                          setState(() {
-                            _isTapped2 =
-                                !_isTapped2; // Toggle warna kotak kedua
-                            _isTapped1 = false; // Reset kotak pertama
-                          });
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Near()),
+                          );
                         },
+                        splashColor: Colors.black, // Efek splash saat ditekan
                         child: Container(
                           height: 45.0,
                           width: 120.0,
                           decoration: BoxDecoration(
-                            color: _isTapped2
-                                ? Colors.black
-                                : Colors
-                                    .grey[300], // Warna berubah saat ditekan
+                            color: Colors.grey[300], // Warna default
                             borderRadius:
                                 BorderRadius.circular(15.0), // Sudut melengkung
                           ),
@@ -285,10 +280,9 @@ class _HomePageState extends State<HomePage> {
                             'Nearby',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 11.0, // Teks menjadi bold
+                              fontSize: 11.0,
                             ),
-                            textAlign: TextAlign
-                                .center, // Teks berada di tengah horizontal
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
@@ -461,15 +455,6 @@ Widget builduser(String username, BuildContext context) {
             children: [
               _buildMenuOption(Icons.person, "Profile", () {
                 // Aksi ketika tombol Profile ditekan
-              }),
-              _buildMenuOption(Icons.bookmark, "Bookmarked", () {
-                // Aksi ketika tombol Bookmarked ditekan
-              }),
-              _buildMenuOption(Icons.history, "Previous Trips", () {
-                // Aksi ketika tombol Previous Trips ditekan
-              }),
-              _buildMenuOption(Icons.settings, "Settings", () {
-                // Aksi ketika tombol Settings ditekan
               }),
               _buildMenuOption(Icons.logout, "Log Out", () {
                 Navigator.push(
