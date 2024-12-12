@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/screens/Loginpage.dart';
+import 'package:wisata_mobile_5/screens/splashscreen.dart';
 
 
 void main() {
@@ -13,7 +14,7 @@ class TravelApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginForm(),
+      home: Splashscreen(),
     );
   }
 }

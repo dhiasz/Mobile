@@ -379,7 +379,7 @@ List<TravelDestination> listDestination = [
         'assets/images/Telagawarna3.jpg',
         'assets/images/Telagawarna4.jpg',
       ],
-      location: 'Jl. Raya Puncak No. KM 90, Kabupaten Cianjur',
+      location: 'Puncak, Kabupaten Cianjur',
       review: random.nextInt(250) + 20,
       price: 150,
       description:

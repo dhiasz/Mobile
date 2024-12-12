@@ -172,29 +172,7 @@ class _HomePageState extends State<HomePage> {
             _resetColors, // Reset warna kotak ke abu-abu jika tap terjadi di luar kotak
         child: ListView(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Column(
-                children: [
-                  const SizedBox(height: 20.0),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Search places',
-                      prefixIcon: const Icon(Icons.search),
-                      suffixIcon: IconButton(
-                        icon: const Icon(Icons.tune),
-                        onPressed: () {
-                          // Tambahkan fungsionalitas untuk tombol ini
-                        },
-                      ),
-                      border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(18.0)),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(

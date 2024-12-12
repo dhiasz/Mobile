@@ -15,7 +15,7 @@ class _SplashscreenState extends State<Splashscreen> {
     super.initState();
 
     // Menunda sebanyak 3 detik
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 10), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const Landingpage()),
@@ -26,13 +26,26 @@ class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffFFFFFF),
-      body: Center(
+      backgroundColor: const Color(0xff1B1B1B),
+      body: Container(
+         decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFF0172B2), // Warna di atas
+                Color(0xFF001645), // Warna di bawah
+              ],
+            ),
+          ),
+       
+      
+      child:Center(
         child: Stack(
           alignment: Alignment.center,
           children: [
             Lottie.network(
-              'https://lottie.host/ec78e935-6666-4e20-afde-1b550470cf96/PEiYTAn89z.json',
+              'https://lottie.host/ecd897a5-d0b4-419c-9ecb-0268b7911b99/eahl07KKiL.json',
               width: 350,
               height: 350,
               fit: BoxFit.contain,
@@ -40,13 +53,13 @@ class _SplashscreenState extends State<Splashscreen> {
             const Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(height: 300),
+                SizedBox(height: 400),
                 Text(
-                  'ASLABTIF',
+                  'CIPUN',
                   style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xff1B1B1B),
+                    color: Colors.white,
                   ),
                 ),
                 Text(
@@ -54,13 +67,15 @@ class _SplashscreenState extends State<Splashscreen> {
                   style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xff1B1B1B),
+                    color: Colors.white,
+
                   ),
                 ),
               ],
             ),
           ],
         ),
+      ),
       ),
     );
   }

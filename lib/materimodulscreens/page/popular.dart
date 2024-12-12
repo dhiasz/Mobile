@@ -12,6 +12,7 @@ class Viewall extends StatefulWidget {
 }
 
 class _ViewallState extends State<Viewall> {
+  // List kategori populer dan rekomendasi
   List<TravelDestination> popular = listDestination
       .where((element) => element.category == 'popular')
       .toList();
@@ -20,13 +21,31 @@ class _ViewallState extends State<Viewall> {
       .where((element) => element.category == 'rekomendasi')
       .toList();
 
-  bool _isTapped1 = false;
-  bool _isTapped2 = false;
+  // Kontrol pencarian dan hasil pencarian
+  TextEditingController searchController = TextEditingController();
+  List<TravelDestination> filteredDestinations = [];
 
-  void _resetColors() {
+  @override
+  void initState() {
+    super.initState();
+    // Tampilkan semua data saat pertama kali dibuka
+    filteredDestinations = [...popular, ...rekomendasi];
+  }
+
+  // Fungsi pencarian berdasarkan nama destinasi
+  void _searchDestination(String query) {
     setState(() {
-      _isTapped1 = false;
-      _isTapped2 = false;
+      if (query.isEmpty) {
+        // Tampilkan semua data jika input kosong
+        filteredDestinations = [...popular, ...rekomendasi];
+      } else {
+        // Filter data berdasarkan input teks
+        filteredDestinations = [...popular, ...rekomendasi]
+            .where((destination) => destination.name
+                .toLowerCase()
+                .contains(query.toLowerCase()))
+            .toList();
+      }
     });
   }
 
@@ -34,18 +53,18 @@ class _ViewallState extends State<Viewall> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(100.0), // Tinggi AppBar
+        preferredSize: const Size.fromHeight(100.0),
         child: AppBar(
+                automaticallyImplyLeading: false, // Hilangkan panah kembali
           backgroundColor: Colors.white,
-          automaticallyImplyLeading: false, // Menghapus tombol kembali default
           flexibleSpace: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment:
-                  CrossAxisAlignment.center, // Menjaga keselarasan vertikal
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Bagian kiri: Teks dengan subjudul
+                // Teks header
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -68,9 +87,9 @@ class _ViewallState extends State<Viewall> {
                     ),
                   ],
                 ),
-                // Bagian kanan: CircleAvatar
+                // Avatar profil
                 const CircleAvatar(
-                  radius: 20.0, // Ukuran gambar avatar
+                  radius: 20.0,
                   backgroundImage: NetworkImage(
                     'https://i.pinimg.com/564x/52/46/49/524649971a55b2f3a0dae1d537c61098.jpg',
                   ),
@@ -82,7 +101,9 @@ class _ViewallState extends State<Viewall> {
       ),
       backgroundColor: Colors.white,
       body: GestureDetector(
-        onTap: _resetColors, // Reset warna kotak ke abu-abu jika tap terjadi di luar kotak
+        onTap: () {
+          FocusScope.of(context).unfocus(); // Tutup keyboard saat area lain diketuk
+        },
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -91,94 +112,117 @@ class _ViewallState extends State<Viewall> {
               children: [
                 const SizedBox(height: 20.0),
                 TextField(
+                  controller: searchController,
                   decoration: InputDecoration(
                     hintText: 'Search places',
                     prefixIcon: const Icon(Icons.search),
                     suffixIcon: IconButton(
-                      icon: const Icon(Icons.tune),
+                      icon: const Icon(Icons.clear),
                       onPressed: () {
-                        // Tambahkan fungsionalitas untuk tombol ini
+                        searchController.clear();
+                        _searchDestination(''); // Reset pencarian
                       },
                     ),
                     border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(18.0)),
                     ),
                   ),
+                  onChanged: _searchDestination, // Filter saat input berubah
                 ),
                 const SizedBox(height: 30.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      'Popular places',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'View all',
-                      style: TextStyle(
-                        fontSize: 12.0,
-                        color: Color.fromARGB(135, 90, 90, 90),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                // Daftar destinasi
-                Column(
-                  children: List.generate(
-                    popular.length,
-                    (index) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => Detail(destination: popular[index]),
-                            ),
-                          );
-                        },
-                        child: RekomendasiDestination(
-                          destination: popular[index],
-                        ),
-                      ),
+                if (searchController.text.isEmpty) ...[
+                  // Tampilan awal berdasarkan kategori
+                  const Text(
+                    'Popular',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
-                const SizedBox(height: 30),
-                const Text(
-                  'Rekomendasi',
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Column(
-                  children: List.generate(
-                    rekomendasi.length,
-                    (index) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: GestureDetector(
+                  const SizedBox(height: 20),
+                  Column(
+                    children: List.generate(
+                      popular.length,
+                      (index) => Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: GestureDetector(
                           onTap: () {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (_) =>
-                                    Detail(destination: rekomendasi[index]),
+                                builder: (_) => Detail(destination: popular[index]),
                               ),
                             );
                           },
-                        child: RekomendasiDestination(
-                          destination: rekomendasi[index],
+                          child: RekomendasiDestination(
+                            destination: popular[index],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
+                  const SizedBox(height: 30.0),
+                  const Text(
+                    'Rekomendasi',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Column(
+                    children: List.generate(
+                      rekomendasi.length,
+                      (index) => Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => Detail(destination: rekomendasi[index]),
+                              ),
+                            );
+                          },
+                          child: RekomendasiDestination(
+                            destination: rekomendasi[index],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ] else ...[
+                  // Tampilan hasil pencarian
+                  const Text(
+                    'Results',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Column(
+                    children: List.generate(
+                      filteredDestinations.length,
+                      (index) => Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => Detail(destination: filteredDestinations[index]),
+                              ),
+                            );
+                          },
+                          child: RekomendasiDestination(
+                            destination: filteredDestinations[index],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ],
             ),
           ),
@@ -187,3 +231,4 @@ class _ViewallState extends State<Viewall> {
     );
   }
 }
+
