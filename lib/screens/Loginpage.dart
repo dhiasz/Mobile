@@ -94,7 +94,7 @@ class _LoginFormState extends State<LoginForm> {
                     borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  labelText: 'Email or Username',
+                  labelText: 'Email or -Username',
                   labelStyle: const TextStyle(color: Colors.black), fillColor: Colors.grey
                 ),
               ),
