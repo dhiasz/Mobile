@@ -25,19 +25,19 @@ class SignupPage extends StatelessWidget {
         padding:const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
         child: Column(
           children: [
-            SizedBox(height: 30),
-            Text(
+            const SizedBox(height: 30),
+            const Text(
               'SIGN UP', 
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26.0), 
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 50),
-            Text(
+            const SizedBox(height: 50),
+            const Text(
               'Please Enter Your Personal Data', 
               style: TextStyle(fontSize: 16.0), 
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
@@ -45,18 +45,18 @@ class SignupPage extends StatelessWidget {
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   contentPadding:
-                      EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
+                      const EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15),
                   ),
                 
                   labelText: 'Username',
-                  labelStyle: TextStyle(color: Colors.black),
+                  labelStyle: const TextStyle(color: Colors.black),
                 ),
               ),
             ),
@@ -66,68 +66,69 @@ class SignupPage extends StatelessWidget {
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   contentPadding:
-                      EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
+                      const EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15),
                   ),
                 
                   labelText: 'Name',
-                  labelStyle: TextStyle(color: Colors.black),
+                  labelStyle: const TextStyle(color: Colors.black),
                 ),
               ),
             ),
             Padding(
               padding:const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
+                obscureText: true,
                 controller: getPass,
                 cursorColor: Colors.black,
                 
                 decoration: InputDecoration(
                   
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   contentPadding:
-                      EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
+                      const EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   
                   labelText: 'Password',
-                  labelStyle: TextStyle(color: Colors.black),
+                  labelStyle: const TextStyle(color: Colors.black),
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
+                obscureText: true,
                 cursorColor: Colors.black,
-                
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   contentPadding:
-                      EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
+                      const EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2.0),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   
                   labelText: 'Confirm Password',
-                  labelStyle: TextStyle(color: Colors.black),
+                  labelStyle: const TextStyle(color: Colors.black),
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SizedBox(
               width: 300.0,
               height: 50.0,
@@ -150,7 +151,7 @@ class SignupPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'Sign Up',
                 style: TextStyle(fontSize: 20, color: Colors.white),
               ),

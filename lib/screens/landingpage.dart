@@ -60,7 +60,7 @@ class _LandingpageState extends State<Landingpage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LoginForm(),
+                        builder: (context) => const LoginForm(),
                       ),
                     );
                   },
@@ -81,8 +81,8 @@ class _LandingpageState extends State<Landingpage> {
             alignment: Alignment.bottomCenter,
             child: Container(
               padding: const EdgeInsets.all(25),
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   topRight: Radius.circular(20),
                 ),
@@ -95,7 +95,7 @@ class _LandingpageState extends State<Landingpage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LoginForm(),
+                          builder: (context) => const LoginForm(),
                         ),
                       );
                     },

@@ -37,7 +37,7 @@ class _DetailState extends State<Detail> {
       boxShadow: [
         BoxShadow(
           color: Colors.black.withOpacity(0.5),
-          offset: Offset(0, 6),
+          offset: const Offset(0, 6),
           blurRadius: 4,
           spreadRadius: 4,
         )
@@ -99,7 +99,7 @@ class _DetailState extends State<Detail> {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 5.0),
+                padding: const EdgeInsets.symmetric(horizontal: 5.0),
                 height: 75,
                 width: 224,
                 decoration: BoxDecoration(
@@ -112,7 +112,7 @@ class _DetailState extends State<Detail> {
                     // Nama wisata
                     Text(
                       widget.destination.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         height: 2,
                         color: Colors.white,
                         fontSize: 18.0,
@@ -121,17 +121,17 @@ class _DetailState extends State<Detail> {
                     ),
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.location_pin,
-                          color: const Color.fromARGB(255, 224, 223, 223),
+                          color: Color.fromARGB(255, 224, 223, 223),
                           size: 20.0,
                         ),
-                        SizedBox(width: 4.0),
+                        const SizedBox(width: 4.0),
                         Text(
                           widget.destination.location,
-                          style: TextStyle(
+                          style: const TextStyle(
                             height: 1.5,
-                            color: const Color.fromARGB(255, 224, 223, 223),
+                            color: Color.fromARGB(255, 224, 223, 223),
                             fontSize: 10.0,
                           ),
                         ),
@@ -151,13 +151,13 @@ class _DetailState extends State<Detail> {
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage(username: 'Kevin')),
+                MaterialPageRoute(builder: (context) => const HomePage(username: 'Kevin')),
               );
             },
             child: CircleAvatar(
               radius: 20.0,
               backgroundColor: Colors.black.withOpacity(0.3),
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_back_ios_new_outlined,
                 color: Colors.white,
               ),
@@ -194,9 +194,9 @@ class _DetailState extends State<Detail> {
 
 
 
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
 
               //TULISAN DESKIPSI
 
@@ -205,7 +205,7 @@ class _DetailState extends State<Detail> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //overview
-                  Row(
+                  const Row(
                     children: [
                       Text(
                         'Overview',
@@ -220,7 +220,7 @@ class _DetailState extends State<Detail> {
                       Text(
                         'Detail',
                         style: TextStyle(
-                          color: const Color.fromARGB(255, 116, 115, 115),
+                          color: Color.fromARGB(255, 116, 115, 115),
                         ),
                       )
                     ],
@@ -228,88 +228,88 @@ class _DetailState extends State<Detail> {
 
                   // DESKRIPSI WISATA
 
-                  SizedBox(height: 30.0),
+                  const SizedBox(height: 30.0),
                   Text(
                     widget.destination.description,
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 116, 115, 115),
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 116, 115, 115),
                     ),
                   ),
 
-                  SizedBox(height: 30.0),
-                  Text(
+                  const SizedBox(height: 30.0),
+                  const Text(
                     'Fasilitas',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
 
                   //FASILITAS WISATA
                   Text(
                     widget.destination.fasility,
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 116, 115, 115),
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 116, 115, 115),
                     ),
                   ),
 
-                  SizedBox(height: 30.0),
-                  Text(
+                  const SizedBox(height: 30.0),
+                  const Text(
                     'WAHANA',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
 
                   //WAHANA WISATA
                   Text(
                     widget.destination.wahana,
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 116, 115, 115),
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 116, 115, 115),
                     ),
                   ),
 
-                  SizedBox(height: 30.0),
-                  Text(
+                  const SizedBox(height: 30.0),
+                  const Text(
                     'Jam Operasional & Tiket',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
 
                   //BIAYA TIKET TARIF WISATA JAM OPERASIONAL
                   Text(
                    widget.destination.jam_dan_tiket,
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 116, 115, 115),
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 116, 115, 115),
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   Text(
-                    'Keindahan' + widget.destination.name,
+                    'Keindahan${widget.destination.name}',
                     textAlign: TextAlign.start,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
 
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                 ],
               ),
             ),
             Padding(
   padding: const EdgeInsets.all(10.0),
-  child: Container(
+  child: SizedBox(
     height: 600, // Adjust height as needed
     child: GridView.builder(
       itemCount: widget.destination.image!.length, // Menyesuaikan dengan jumlah gambar yang ada di destinasi
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // Jumlah kolom grid
         crossAxisSpacing: 10.0, // Spacing antar kolom
         mainAxisSpacing: 10.0, // Spacing antar baris
@@ -328,7 +328,7 @@ class _DetailState extends State<Detail> {
     ),
   ),
 ),
-            SizedBox(height: 50.0),
+            const SizedBox(height: 50.0),
           ],
         ),
       ),

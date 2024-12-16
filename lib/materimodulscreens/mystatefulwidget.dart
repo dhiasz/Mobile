@@ -14,8 +14,8 @@ class Mystatefulwidget extends StatefulWidget {
 class _MyWidgetState extends State<Mystatefulwidget> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const MainPage(),
+    return const MaterialApp(
+      home: MainPage(),
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );
   }
@@ -48,8 +48,8 @@ class _MainPageState extends State<MainPage> {
     _pages = [
       HomePage(username: username),  // Pass the username to HomePage
     CalendarPage(), // Halaman Cari
-    Favorite(), // Halaman Pengaturan
-    Userpage(), // Halaman Pengguna  // Pass the username to UserPage
+    const Favorite(), // Halaman Pengaturan
+    const Userpage(), // Halaman Pengguna  // Pass the username to UserPage
     ];
   }
 

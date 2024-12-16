@@ -1,11 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:wisata_mobile_5/main.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/cibodas.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/curugciberem.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/most.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/near.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/popular.dart';
+import 'package:wisata_mobile_5/materimodulscreens/page/profile.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/thenice.dart';
 import 'package:wisata_mobile_5/materimodulscreens/searchpage.dart';
 import 'package:wisata_mobile_5/materimodulscreens/Favorite.dart';
@@ -18,7 +20,7 @@ import 'package:wisata_mobile_5/screens/splashscreen.dart';
 class HomePage extends StatefulWidget {
   final String username;
 
-  const HomePage({Key? key, required this.username}) : super(key: key);
+  const HomePage({super.key, required this.username});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -42,7 +44,7 @@ class _HomePageState extends State<HomePage> {
     _pages = [
       buildutama(),
       CalendarPage(), // Halaman utama
-      Favorite(),
+      const Favorite(),
       builduser(widget.username, context), // Kirim username ke UserPage
     ];
   }
@@ -157,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 // Bagian kanan: CircleAvatar
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 20.0, // Ukuran gambar avatar
                   backgroundImage: AssetImage(
                     'assets//images/barbie.jpg', // Ganti dengan gambar profil
@@ -194,7 +196,8 @@ class _HomePageState extends State<HomePage> {
                           // Aksi ketika "View all" diklik
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Viewall()),
+                            MaterialPageRoute(
+                                builder: (context) => const Viewall()),
                           );
                         },
                         child: const Text(
@@ -212,10 +215,10 @@ class _HomePageState extends State<HomePage> {
             ),
 
             // Kotak hitam dengan aksi ketukan
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Container(
+              child: SizedBox(
                 height: 45.0,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -227,7 +230,8 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Most()),
+                            MaterialPageRoute(
+                                builder: (context) => const Most()),
                           );
                         },
                         child: Container(
@@ -262,7 +266,8 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Near()),
+                            MaterialPageRoute(
+                                builder: (context) => const Near()),
                           );
                         },
                         splashColor: Colors.black, // Efek splash saat ditekan
@@ -296,7 +301,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.fromLTRB(15.0, 35.0, 20.0, 20.0),
               child: Container(
-                height: 460.0,
+                height: 500.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
@@ -405,7 +410,7 @@ Widget builduser(String username, BuildContext context) {
       backgroundColor: Colors.white,
       elevation: 0,
       automaticallyImplyLeading: false, // Hilangkan panah kembali
-      title: Text(
+      title: const Text(
         "Profile",
         style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
       ),
@@ -419,23 +424,23 @@ Widget builduser(String username, BuildContext context) {
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: Column(
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 50,
                 backgroundImage: AssetImage(
                     'assets//images/barbie.jpg'), // Ganti dengan gambar profil
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
-                "$username",
-                style: TextStyle(
+                username,
+                style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(
-                "${username}@maling.com",
+                "$username@maling.com",
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey[600],
@@ -446,7 +451,7 @@ Widget builduser(String username, BuildContext context) {
         ),
 
         // Bagian Statistik
-        SizedBox(
+        const SizedBox(
           height: 20.0,
         ),
         // Bagian Tombol Menu
@@ -454,12 +459,15 @@ Widget builduser(String username, BuildContext context) {
           child: ListView(
             children: [
               _buildMenuOption(Icons.person, "Profile", () {
-                // Aksi ketika tombol Profile ditekan
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  ProfilePage(username : username)),
+                );
               }),
               _buildMenuOption(Icons.logout, "Log Out", () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Splashscreen()),
+                  MaterialPageRoute(builder: (context) => const Splashscreen()),
                 );
               }),
             ],
@@ -484,7 +492,7 @@ Widget _buildMenuOption(IconData icon, String title, VoidCallback onTap) {
               color: Colors.black.withOpacity(0.7),
               blurRadius: 3,
               spreadRadius: 1,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
         ),

@@ -56,9 +56,9 @@ class _MostState extends State<Most> {
         child: AppBar(
                 // automaticallyImplyLeading: false, // Hilangkan panah kembali
           backgroundColor: Colors.white,
-          flexibleSpace: Padding(
+          flexibleSpace: const Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+                EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -67,7 +67,7 @@ class _MostState extends State<Most> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(height: 15.0),
                     Text(
                       'Hi, Kevin 👋',
@@ -87,7 +87,7 @@ class _MostState extends State<Most> {
                   ],
                 ),
                 // Avatar profil
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 20.0,
                   backgroundImage: AssetImage('assets/images/barbie.jpg')
                 ),

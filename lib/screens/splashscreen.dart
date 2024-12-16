@@ -50,7 +50,7 @@ class _SplashscreenState extends State<Splashscreen> {
                 fit: BoxFit.contain,
               ),
               // Column berisi teks, diposisikan di atas animasi Lottie
-              Column(
+              const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -63,7 +63,7 @@ class _SplashscreenState extends State<Splashscreen> {
                       fontFamily: 'Lobster',
                     ),
                   ),
-                  const SizedBox(height: 200), // Memberikan jarak antara dua teks
+                  SizedBox(height: 200), // Memberikan jarak antara dua teks
                   Text(
                     'Find Your Dream Destination With Us',
                     style: TextStyle(

@@ -4,6 +4,8 @@ import 'package:table_calendar/table_calendar.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,6 +15,8 @@ class MyApp extends StatelessWidget {
 }
 
 class CalendarPage extends StatefulWidget {
+  const CalendarPage({super.key});
+
   @override
   _CalendarPageState createState() => _CalendarPageState();
 }
@@ -20,16 +24,16 @@ class CalendarPage extends StatefulWidget {
 class _CalendarPageState extends State<CalendarPage> {
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
-  TextEditingController _inputController = TextEditingController();
+  final TextEditingController _inputController = TextEditingController();
   
   // Menyimpan catatan berdasarkan tanggal
-  Map<DateTime, String> _notes = {};
+  final Map<DateTime, String> _notes = {};
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cipun Calendar'),
+        title: const Text('Cipun Calendar'),
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
       ),
@@ -37,7 +41,7 @@ class _CalendarPageState extends State<CalendarPage> {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.0), // Padding untuk kiri dan kanan kalender
+            padding: const EdgeInsets.symmetric(horizontal: 5.0), // Padding untuk kiri dan kanan kalender
             child: TableCalendar(
               firstDay: DateTime.utc(2000, 1, 1),
               lastDay: DateTime.utc(2100, 12, 31),
@@ -49,7 +53,7 @@ class _CalendarPageState extends State<CalendarPage> {
                   _focusedDay = focusedDay;
                 });
               },
-              calendarStyle: CalendarStyle(
+              calendarStyle: const CalendarStyle(
                 todayDecoration: BoxDecoration(
                   color: Colors.blue,
                   shape: BoxShape.circle,
@@ -61,25 +65,25 @@ class _CalendarPageState extends State<CalendarPage> {
               ),
             ),
           ),
-          SizedBox(height: 20), // Spacer
+          const SizedBox(height: 20), // Spacer
           if (_selectedDay != null) 
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0), // Padding untuk input field
+              padding: const EdgeInsets.symmetric(horizontal: 20.0), // Padding untuk input field
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Masukan Pengingat pada : ${_selectedDay.toString().split(' ')[0]}',
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                   TextField(
                     controller: _inputController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Masukkan catatan',
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed: () {
                       if (_inputController.text.isNotEmpty) {
@@ -89,16 +93,16 @@ class _CalendarPageState extends State<CalendarPage> {
                         });
                       }
                     },
-                    child: Text('Simpan Catatan'),
+                    child: const Text('Simpan Catatan'),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Menampilkan catatan yang telah disimpan untuk tanggal yang dipilih
                   if (_notes.containsKey(_selectedDay))
                     Padding(
-                      padding: EdgeInsets.only(top: 10), // Jarak antara tombol simpan dan catatan
+                      padding: const EdgeInsets.only(top: 10), // Jarak antara tombol simpan dan catatan
                       child: Text(
                         'Catatan: ${_notes[_selectedDay]}',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                     ),
                 ],

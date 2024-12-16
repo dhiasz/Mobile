@@ -57,9 +57,9 @@ class _ViewallState extends State<Viewall> {
         child: AppBar(
                 // automaticallyImplyLeading: false, // Hilangkan panah kembali
           backgroundColor: Colors.white,
-          flexibleSpace: Padding(
+          flexibleSpace: const Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+                EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,7 +68,7 @@ class _ViewallState extends State<Viewall> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(height: 15.0),
                     Text(
                       'Hi, Kevin 👋',
@@ -88,7 +88,7 @@ class _ViewallState extends State<Viewall> {
                   ],
                 ),
                 // Avatar profil
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 20.0,
                   backgroundImage: NetworkImage(
                     'https://i.pinimg.com/564x/52/46/49/524649971a55b2f3a0dae1d537c61098.jpg',

@@ -32,7 +32,7 @@ class _TheniceState extends State<Thenice> {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.5),
-                      offset: Offset(0, 6),
+                      offset: const Offset(0, 6),
                       blurRadius: 4,
                       spreadRadius: 4,
                     )
@@ -57,14 +57,14 @@ class _TheniceState extends State<Thenice> {
                         child: BackdropFilter(
                           filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 5.0),
+                            padding: const EdgeInsets.symmetric(horizontal: 5.0),
                             height: 75,
                             width: 224,
                             decoration: BoxDecoration(
                               color: Colors.transparent,
                               borderRadius: BorderRadius.circular(15.0),
                             ),
-                            child: Column(
+                            child: const Column(
                               crossAxisAlignment: CrossAxisAlignment
                                   .start, // Menyelaraskan ke kiri
                               children: [
@@ -85,7 +85,7 @@ class _TheniceState extends State<Thenice> {
                                   children: [
                                     Icon(
                                       Icons.location_pin, // Ikon peta
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 224, 223, 223),
                                       size: 20.0, // Ukuran ikon
                                     ),
@@ -99,7 +99,7 @@ class _TheniceState extends State<Thenice> {
                                       'Cianjur, Mariwati-Sukaresmi',
                                       style: TextStyle(
                                         height: 1.5,
-                                        color: const Color.fromARGB(
+                                        color: Color.fromARGB(
                                             255, 224, 223, 223),
                                         fontSize: 10.0,
                                       ),
@@ -121,13 +121,13 @@ class _TheniceState extends State<Thenice> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Mystatefulwidget()),
+                                builder: (context) => const Mystatefulwidget()),
                           );
                         },
                         child: CircleAvatar(
                           radius: 20.0, // Ukuran gambar avatar
                           backgroundColor: Colors.black.withOpacity(0.3),
-                          child: Icon(
+                          child: const Icon(
                             Icons
                                 .arrow_back_ios_new_outlined, // Sesuaikan dengan icon yang diinginkan
                             color: Colors.white,
@@ -142,7 +142,7 @@ class _TheniceState extends State<Thenice> {
                       child: CircleAvatar(
                         radius: 20.0, // Ukuran gambar avatar
                         backgroundColor: Colors.black.withOpacity(0.3),
-                        child: Icon(
+                        child: const Icon(
                           Icons
                               .bookmark_outline_rounded, // Sesuaikan dengan icon yang diinginkan
                           color: Colors.white,
@@ -153,8 +153,8 @@ class _TheniceState extends State<Thenice> {
                 ),
               ),
             ),
-            SizedBox(height: 20.0),
-            Padding(
+            const SizedBox(height: 20.0),
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
 
               //TULISAN DESKIPSI
@@ -179,7 +179,7 @@ class _TheniceState extends State<Thenice> {
                       Text(
                         'Detail',
                         style: TextStyle(
-                          color: const Color.fromARGB(255, 116, 115, 115),
+                          color: Color.fromARGB(255, 116, 115, 115),
                         ),
                       )
                     ],
@@ -191,7 +191,7 @@ class _TheniceState extends State<Thenice> {
                   Text(
                     'The Nice Funtastic Park memiliki banyak sekali wahana rekreasi mulai dariplayground untuk anak-anak hingga wahana petualangan yang seru. Yang palingdiminati ialah Mini Zoo yang menampung berbagai jenis satwa unik dari beberapanegara. Obyek wisata ini juga dilengkapi dengan berbagai spot foto Instagramable dengan latar belakang perbukitan hijau, area parkir luas, restoran, mushola, toilet, penyewaan e-bike, dan tempat duduk untuk bersantai wisatawan.',
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 116, 115, 115),
+                      color: Color.fromARGB(255, 116, 115, 115),
                     ),
                   ),
 
@@ -221,7 +221,7 @@ class _TheniceState extends State<Thenice> {
                     '12. E-bike\n'
                     '13. Merchandise Store',
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 116, 115, 115),
+                      color: Color.fromARGB(255, 116, 115, 115),
                     ),
                   ),
 
@@ -250,7 +250,7 @@ class _TheniceState extends State<Thenice> {
                     '11. Kebun sayur organik\n'
                     '12. Aneka rumah flora dan fauna (rumah jamur, rumah kupu-kupu, rumah lebah, rumah burung, dan rumah tanaman)',
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 116, 115, 115),
+                      color: Color.fromARGB(255, 116, 115, 115),
                     ),
                   ),
 
@@ -270,7 +270,7 @@ class _TheniceState extends State<Thenice> {
                     '                       : Sabtu - Minggu, 08.00-17.45\n'
                     'Harga               : Weekday Rp30.000 & Weekend Rp35.000',
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 116, 115, 115),
+                      color: Color.fromARGB(255, 116, 115, 115),
                     ),
                   ),
                   SizedBox(height: 20.0),
@@ -289,7 +289,7 @@ class _TheniceState extends State<Thenice> {
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Container(
+              child: SizedBox(
                 height: 400, // Adjust height as needed
                 child: GridView.count(
                   crossAxisCount: 2,
@@ -301,7 +301,7 @@ class _TheniceState extends State<Thenice> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(
                             20), // Menambahkan border radius
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage('assets/images/Thenicepark.jpg'),
                           fit: BoxFit.cover,
                         ),
@@ -312,7 +312,7 @@ class _TheniceState extends State<Thenice> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(
                             20), // Menambahkan border radius
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage('assets/images/Thenicepark(2).jpg'),
                           fit: BoxFit.cover,
                         ),
@@ -323,7 +323,7 @@ class _TheniceState extends State<Thenice> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(
                             20), // Menambahkan border radius
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage('assets/images/Thenicepark(3).jpg'),
                           fit: BoxFit.cover,
                         ),
@@ -333,7 +333,7 @@ class _TheniceState extends State<Thenice> {
                 ),
               ),
             ),
-            SizedBox(height: 50.0),
+            const SizedBox(height: 50.0),
           ],
         ),
       ),
