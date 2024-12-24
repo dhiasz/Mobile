@@ -250,7 +250,7 @@ class _HomePageState extends State<HomePage> {
                           child: const Text(
                             'Most viewed',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 11.0, // Teks menjadi bold
                             ),
                             textAlign: TextAlign
@@ -284,7 +284,7 @@ class _HomePageState extends State<HomePage> {
                           child: const Text(
                             'Nearby',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 11.0,
                             ),
                             textAlign: TextAlign.center,
@@ -459,10 +459,7 @@ Widget builduser(String username, BuildContext context) {
           child: ListView(
             children: [
               _buildMenuOption(Icons.person, "Profile", () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) =>  ProfilePage(username : username)),
-                );
+
               }),
               _buildMenuOption(Icons.logout, "Log Out", () {
                 Navigator.push(
